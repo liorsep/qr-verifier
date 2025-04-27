@@ -82,15 +82,11 @@
       .then(response => response.json())
       .then(data => {
         validHashes = data;
-        document.getElementById('reset-btn').style.display = 'inline-block';
       })
       .catch(err => {
         document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
+        console.error('Failed to load valid hashes:', err);
       });
-
-      function findEntryByHash(hash) {
-       return validHashes.find(item => item.hash === hash);
-      }
 
       fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i') // <--- your SheetDB URL for approvals
         .then(response => response.json())
@@ -102,41 +98,45 @@
           console.error('Failed to load approved list:', err);
         });
 
-    function onScanSuccess(decodedText) {
-      if (decodedText.startsWith('hash=')) {
-        const scannedHash = decodedText.replace('hash=', '').trim();
+      function findEntryByHash(hash) {
+        return validHashes.find(item => item.hash === hash);
+      }
 
-        const entry = findEntryByHash(scannedHash);
+      function onScanSuccess(decodedText) {
+        if (decodedText.startsWith('hash=')) {
+          const scannedHash = decodedText.replace('hash=', '').trim();
+          const entry = findEntryByHash(scannedHash); // search in validHashes
 
-        if (!entry) {
-          document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
+          if (!entry) {
+            document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
+            document.getElementById('approve-btn').style.display = 'none';
+            document.getElementById('person-name').innerText = "";
+          } else if (approvedHashes.includes(scannedHash)) {  // <--- here you check if already approved
+            document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
+            document.getElementById('approve-btn').style.display = 'none';
+            document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
+          } else {
+            currentScannedHash = scannedHash;
+            currentScannedName = entry.name;
+            document.getElementById('result').innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
+            document.getElementById('approve-btn').style.display = 'inline-block';
+            document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
+          }
+
+        } else {
+          document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
           document.getElementById('approve-btn').style.display = 'none';
           document.getElementById('person-name').innerText = "";
-        } else if (approvedHashes.includes(scannedHash)) { // <-- changed here
-          document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
-          document.getElementById('approve-btn').style.display = 'none';
-          document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
-        } else {
-          currentScannedHash = scannedHash;
-          currentScannedName = entry.name;
-          document.getElementById('result').innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
-          document.getElementById('approve-btn').style.display = 'inline-block';
-          document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         }
-
-
-      } else {
-        document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
-        document.getElementById('approve-btn').style.display = 'none';
-        document.getElementById('person-name').innerText = "";
       }
-    }
+
 
     document.getElementById('approve-btn').addEventListener('click', function() {
+      document.getElementById('approve-btn').disabled = true;
       if (currentScannedHash) {
         const entry = findEntryByHash(currentScannedHash);
         if (entry) {
-          saveApproval(entry.name, entry.phone || '', entry.amount || '');
+          saveApproval(entry.name, entry.phone || '', entry.amount || '', currentScannedHash);
           approvedHashes.push(currentScannedHash); // update the local memory
         }
         document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved for ' + currentScannedName + '!</span>';
@@ -158,13 +158,14 @@
       "reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
 
-    function saveApproval(name, number, amount) {
+    function saveApproval(name, number, amount, hash) {
     const data = {
       data: [
         {
           Name: name,
           Phone: number,
           Amount: amount,
+          Hash: hash,
           "Approved At": new Date().toISOString()
         }
       ]
