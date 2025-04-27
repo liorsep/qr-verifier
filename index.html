@@ -82,32 +82,33 @@
         document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
       });
 
-    function findNameByHash(hash) {
-      const entry = validHashes.find(item => item.hash === hash);
-      return entry ? entry.name : null;
-    }
+      function findEntryByHash(hash) {
+       return validHashes.find(item => item.hash === hash);
+      }
+
 
     function onScanSuccess(decodedText) {
       if (decodedText.startsWith('hash=')) {
         const scannedHash = decodedText.replace('hash=', '').trim();
 
-        const name = findNameByHash(scannedHash);
+        const entry = findEntryByHash(scannedHash);
 
-        if (!name) {
+        if (!entry) {
           document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
           document.getElementById('approve-btn').style.display = 'none';
           document.getElementById('person-name').innerText = "";
         } else if (scannedHashes.includes(scannedHash)) {
           document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
           document.getElementById('approve-btn').style.display = 'none';
-          document.getElementById('person-name').innerText = name;
+          document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         } else {
           currentScannedHash = scannedHash;
-          currentScannedName = name;
+          currentScannedName = entry.name;
           document.getElementById('result').innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
           document.getElementById('approve-btn').style.display = 'inline-block';
-          document.getElementById('person-name').innerText = `Name: ${name}`;
+          document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         }
+
       } else {
         document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
         document.getElementById('approve-btn').style.display = 'none';

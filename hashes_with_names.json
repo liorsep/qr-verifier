@@ -1,54 +1,67 @@
 [
   {
     "hash": "a99fd2bb368e769a8eb40d9dce546913e404399f3320de483dfb01aac9647c32",
-    "name": "Slavik Jacobson"
+    "name": "Slavik Jacobson",
+    "amount": 150.0
   },
   {
     "hash": "24c3a24138ef813971a401b1f4940705da35fcd7bd75255960c4083d6c4b40a8",
-    "name": "lee ofri"
+    "name": "lee ofri",
+    "amount": 50.0
   },
   {
     "hash": "ba78b93e95abd985cc69dd9db8b3b6cb14cf9dd0272e2486716bd622ab44ac60",
-    "name": "Sergey Grinblat"
+    "name": "Sergey Grinblat",
+    "amount": 50.0
   },
   {
     "hash": "d43facb4ffb82f4e07ae81e1a21de37b03b2ed35053de934cb1683ffd5bf8db2",
-    "name": "Yael Shani"
+    "name": "Yael Shani",
+    "amount": 40.0
   },
   {
     "hash": "1e1b6d53d68cb55c40ce98558cae68c0823a30c129744f467636f1630c3e3903",
-    "name": "sa kru"
+    "name": "sa kru",
+    "amount": 100.0
   },
   {
     "hash": "9179e228dd4c378580dab6b64acc8f63072a0be79c2c1d9f840430d7f9640a15",
-    "name": "Hayk Balagyozian"
+    "name": "Hayk Balagyozian",
+    "amount": 50.0
   },
   {
     "hash": "9179e228dd4c378580dab6b64acc8f63072a0be79c2c1d9f840430d7f9640a15",
-    "name": "Hayk Balagyozian"
+    "name": "Hayk Balagyozian",
+    "amount": 50.0
   },
   {
     "hash": "970416e331f96c5e80007c9d5745624fa9baa519d090d1aaf762832f53534b04",
-    "name": "Rami Gluzman"
+    "name": "Rami Gluzman",
+    "amount": 100.0
   },
   {
     "hash": "4c160f0ac5f06e4c362cb5cb585c22ac6a8686cc096f0098064df020f23ab0d0",
-    "name": "Anatoly Utkin"
+    "name": "Anatoly Utkin",
+    "amount": 100.0
   },
   {
     "hash": "49bd6e2b142c1fcabc02ce69c8587029faccaf0d6abbcf938ef581f3af47a102",
-    "name": "יונתן יחיא"
+    "name": "יונתן יחיא",
+    "amount": 50.0
   },
   {
     "hash": "0c8bab7576a2eef39444bd22d4ffefa30a0df45ac078cb5044214cc3327cb273",
-    "name": "דניאל שרוף"
+    "name": "דניאל שרוף",
+    "amount": 40.0
   },
   {
     "hash": "700ff4c5bdf1fa0fb29476d136a5fa2d7c3e203adfc3f2b5841f09def3c55c2c",
-    "name": "Lior Josef"
+    "name": "Lior Josef",
+    "amount": 70.0
   },
   {
     "hash": "700ff4c5bdf1fa0fb29476d136a5fa2d7c3e203adfc3f2b5841f09def3c55c2c",
-    "name": "Lior Josef"
+    "name": "Lior Josef",
+    "amount": -700.0
   }
 ]
