@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Independence 2025 - QR Scanner & Verifier</title>
+  <div id="login-form">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleLogin()">Login</button>
+  </div>
+  <div id="app-content" style="display:none;">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <style>
     body { 
@@ -149,6 +155,25 @@
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
+  </script>
+  </div>
+  <script>
+    const validUsers = {
+    "lior": "partyparty",
+    "dror":"partyparty"
+  };
+
+    function handleLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (validUsers[username] === password) {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('app-content').style.display = 'block';
+      } else {
+        alert('Invalid username or password!');
+      }
+    }
   </script>
 </body>
 </html>
