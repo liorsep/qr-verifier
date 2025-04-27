@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Scanner & Verifier</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 30px; }
+    #result { margin-top: 20px; font-size: 1.5em; }
+    .approved { color: green; }
+    .rejected { color: red; }
+  </style>
+</head>
+<body>
+  <h1>QR Scanner & Verifier</h1>
+  <div id="reader" style="width: 300px; margin: auto;"></div>
+  <div id="result"></div>
+
+  <script>
+    let validHashes = [];
+    let scannedHashes = JSON.parse(localStorage.getItem('scannedHashes') || '[]');
+
+    // Load the valid hashes
+    fetch('hashes.json')
+      .then(response => response.json())
+      .then(data => {
+        validHashes = data;
+      })
+      .catch(err => {
+        document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
+      });
+
+    function onScanSuccess(decodedText) {
+      if (decodedText.startsWith('hash=')) {
+        const scannedHash = decodedText.replace('hash=', '').trim();
+
+        if (!validHashes.includes(scannedHash)) {
+          document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
+        } else if (scannedHashes.includes(scannedHash)) {
+          document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
+        } else {
+          scannedHashes.push(scannedHash);
+          localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
+          document.getElementById('result').innerHTML = '<span class="approved">Approved!</span>';
+        }
+      } else {
+        document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
+      }
+    }
+
+    const html5QrcodeScanner = new Html5QrcodeScanner(
+      "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+  </script>
+</body>
+</html>
+
