@@ -1,67 +1,827 @@
 [
   {
-    "hash": "a99fd2bb368e769a8eb40d9dce546913e404399f3320de483dfb01aac9647c32",
-    "name": "Slavik Jacobson",
-    "amount": 150.0
-  },
-  {
-    "hash": "24c3a24138ef813971a401b1f4940705da35fcd7bd75255960c4083d6c4b40a8",
-    "name": "lee ofri",
-    "amount": 50.0
-  },
-  {
-    "hash": "ba78b93e95abd985cc69dd9db8b3b6cb14cf9dd0272e2486716bd622ab44ac60",
-    "name": "Sergey Grinblat",
-    "amount": 50.0
-  },
-  {
-    "hash": "d43facb4ffb82f4e07ae81e1a21de37b03b2ed35053de934cb1683ffd5bf8db2",
-    "name": "Yael Shani",
+    "hash": "6a0e3b3969286e8fa93a0f13c7806406357852d696e2a98049aaccef7022dd5f",
+    "name": "Rinat Fadlon",
     "amount": 40.0
   },
   {
-    "hash": "1e1b6d53d68cb55c40ce98558cae68c0823a30c129744f467636f1630c3e3903",
-    "name": "sa kru",
-    "amount": 100.0
+    "hash": "7b1e7b0a8a91d1c19f88f4d06fdd5e45c9b4820ffd66ad60d2d0d625458af32b",
+    "name": "Ela Taubkin",
+    "amount": 40.0
   },
   {
-    "hash": "9179e228dd4c378580dab6b64acc8f63072a0be79c2c1d9f840430d7f9640a15",
-    "name": "Hayk Balagyozian",
-    "amount": 50.0
+    "hash": "243fc74c9d6f06c94c22526fdbc25e22471b004966cd08675b78c9c6c8afb165",
+    "name": "Shiri Cohen",
+    "amount": 40.0
   },
   {
-    "hash": "9179e228dd4c378580dab6b64acc8f63072a0be79c2c1d9f840430d7f9640a15",
-    "name": "Hayk Balagyozian",
-    "amount": 50.0
+    "hash": "66fe8ce266c0efbdbdc485cd230412f77006d91738e4b6f9841a1fda0cc97f61",
+    "name": "Ofri Tzang",
+    "amount": 40.0
   },
   {
-    "hash": "970416e331f96c5e80007c9d5745624fa9baa519d090d1aaf762832f53534b04",
-    "name": "Rami Gluzman",
-    "amount": 100.0
+    "hash": "584eb5b61e66c48446643e3124f39f341ad8605b4df0e448124553e9ee78b15a",
+    "name": "ניצן בראון",
+    "amount": 40.0
   },
   {
-    "hash": "4c160f0ac5f06e4c362cb5cb585c22ac6a8686cc096f0098064df020f23ab0d0",
-    "name": "Anatoly Utkin",
-    "amount": 100.0
+    "hash": "96edde3d5d5b8ed8df6079b91a176a67dd5f85734db02abf28d125678505991e",
+    "name": "Naama Maoz",
+    "amount": 40.0
   },
   {
-    "hash": "49bd6e2b142c1fcabc02ce69c8587029faccaf0d6abbcf938ef581f3af47a102",
-    "name": "יונתן יחיא",
-    "amount": 50.0
+    "hash": "dcaef39869e5f676ce2f4e29320fbd3cc6c44910d589bbd051f2226968e5bd2c",
+    "name": "Liran Tzimerman",
+    "amount": 40.0
   },
   {
-    "hash": "0c8bab7576a2eef39444bd22d4ffefa30a0df45ac078cb5044214cc3327cb273",
-    "name": "דניאל שרוף",
+    "hash": "05c8f37c91b82d81264545a8a9f68a42d110d21e029a88a021371c467d0a5e3c",
+    "name": "שירה מקסימוב",
+    "amount": 40.0
+  },
+  {
+    "hash": "351cb8fc353da9be2e99caabd2ffc1d82b253a112d38386319e519eff89c0d88",
+    "name": "רון לבינסקי",
+    "amount": 40.0
+  },
+  {
+    "hash": "2c9f115e9862ee4115867e4629b087a6061ea7628e2ee51354fe5c5208f6ddf2",
+    "name": "Yael Amsalem",
+    "amount": 40.0
+  },
+  {
+    "hash": "cf6186bcb1b86ea5c03f2041802571f2f86248fa287d5e58614f00a1c21d1c18",
+    "name": "רם אינגבר",
+    "amount": 40.0
+  },
+  {
+    "hash": "65b007e96948bbcfa689f136a0e8ddce21b81fb9b42c3a941064df4831dbf6db",
+    "name": "hadas stein",
+    "amount": 40.0
+  },
+  {
+    "hash": "8654fdb17b0d06ab5df30aca7de750d0a95a747fa041c65b8bb80904da30790e",
+    "name": "נדב בלש",
+    "amount": 40.0
+  },
+  {
+    "hash": "a7484da10581bb0e7ea928ab53b47c9dfe108e8f3f89b73d2e58af0b8417cca3",
+    "name": "שחר עמיר",
+    "amount": 40.0
+  },
+  {
+    "hash": "a7484da10581bb0e7ea928ab53b47c9dfe108e8f3f89b73d2e58af0b8417cca3",
+    "name": "שחר עמיר",
+    "amount": 40.0
+  },
+  {
+    "hash": "c3be8da21a2b4488b9f239fdee54ba80e0432550b91e07d8551d0d50c6eecf1d",
+    "name": "Ela Bloom",
+    "amount": 40.0
+  },
+  {
+    "hash": "afe33ea85b46aae9d6eb87a1e22fac204aa6a52c406b68e3cf81a8963596d9f4",
+    "name": "Gal Grinderfer",
+    "amount": 40.0
+  },
+  {
+    "hash": "77da26dd2bd2960a6d5e21c4fef1c6ed0e657167bf51f2aa14f0a234b67e3e3c",
+    "name": "אופיר שטילמן",
+    "amount": 40.0
+  },
+  {
+    "hash": "addb758d11397951c3d305de568b5e2f8d417ea9c0c7cf8ec299ad65be01b948",
+    "name": "Duffy Alon",
+    "amount": 40.0
+  },
+  {
+    "hash": "9f456c5b53885df1008c6af9a19441db7b2a3b4d8b88040bd46ed713712ed721",
+    "name": "Erel Felcher Felcher",
+    "amount": 40.0
+  },
+  {
+    "hash": "b450099a9f3174926f283241788e6116e7f7ba2b8811174d80f6d6cb4e3b0694",
+    "name": "Yotam Davidovitz",
+    "amount": 40.0
+  },
+  {
+    "hash": "f81c2c01ef914ffe3211c906b2c6cfb2fcfab883900ab65e29f7a866ba0d1b25",
+    "name": "אלון שפיר",
+    "amount": 40.0
+  },
+  {
+    "hash": "9f990584896ce30f94df9fecb248b5da0d313dc103e23b92d9520681a9b6e8c8",
+    "name": "Yael Takomi",
+    "amount": 40.0
+  },
+  {
+    "hash": "cb86a3771be1c7394381ca9d5ad946151d16507000333d646c6f2547b4b50d4d",
+    "name": "shani shvartz",
+    "amount": 40.0
+  },
+  {
+    "hash": "83562a3fa0c8ca5dbf7735516e27bbd0e4cb323348ed82922ed3db0ddde1443f",
+    "name": "Michal Ben-Yehuda",
+    "amount": 40.0
+  },
+  {
+    "hash": "83562a3fa0c8ca5dbf7735516e27bbd0e4cb323348ed82922ed3db0ddde1443f",
+    "name": "Michal Ben-Yehuda",
+    "amount": 40.0
+  },
+  {
+    "hash": "bf80f2aa13a0973fe1a3f136c0b166efe71947f3d5baa4a8327e2c4b1a3c6713",
+    "name": "גלינה ליבוביץ",
+    "amount": 40.0
+  },
+  {
+    "hash": "c9b65d88f5a97c783250714e95462a6ba511a989dcf09cd4ec2298f4d75da71f",
+    "name": "Ron Maman",
+    "amount": 40.0
+  },
+  {
+    "hash": "c9b65d88f5a97c783250714e95462a6ba511a989dcf09cd4ec2298f4d75da71f",
+    "name": "Ron Maman",
+    "amount": 40.0
+  },
+  {
+    "hash": "fcdd524fb810d3f7d023daf6aba3c200698d4b9c152a195151af9c7a00866c70",
+    "name": "Ben Pelled",
+    "amount": 40.0
+  },
+  {
+    "hash": "c120307c3c9cb62a3d4524e5eed28e9e1b1ce3ee9324d5dc906aff7fddecae36",
+    "name": "Tomer Maimon",
+    "amount": 40.0
+  },
+  {
+    "hash": "745bcdc42a4b858a671ea363d6bab4a949599bee04472fe3d215a3009fd209d9",
+    "name": "יוליה רובינשטיין",
+    "amount": 40.0
+  },
+  {
+    "hash": "c431ed2256941ada061ab173b62b42684d2a516fc1273bdb11df8e520776b656",
+    "name": "עמיחי רוזנצוויג",
+    "amount": 40.0
+  },
+  {
+    "hash": "ae7e84cb6f90610d3f8cc1138166d7cfc7035676d19407fe94cddc659a8e05ec",
+    "name": "hila senderovich",
+    "amount": 40.0
+  },
+  {
+    "hash": "91459c97d6f383e35c8c6aac90716e2170e06f840f5f4d88add19d848e7006c9",
+    "name": "נועה אל עמי",
+    "amount": 40.0
+  },
+  {
+    "hash": "2f94addf418c59742c120f490741948308d99350311243f231ca2bb6c707bde2",
+    "name": "גל דאובר",
+    "amount": 40.0
+  },
+  {
+    "hash": "12f7580f54eace8bc78f472b3f80c3a75988c534ffd4aadebd057c1bfb07e5c6",
+    "name": "יובל מואיז בן גיגי",
+    "amount": 40.0
+  },
+  {
+    "hash": "34e2a2f1568fc290fe66f76fdb813b7e61fd2d36095f0c15510a024ca45d8d68",
+    "name": "Lisa Fedrid",
+    "amount": 40.0
+  },
+  {
+    "hash": "2f94addf418c59742c120f490741948308d99350311243f231ca2bb6c707bde2",
+    "name": "גל דאובר",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": 760.0
+  },
+  {
+    "hash": "3b6de5ea41f55a2b1c90ac7d0822ba0823612a59783869812095634288fc95ac",
+    "name": "אלומה שמש",
+    "amount": 40.0
+  },
+  {
+    "hash": "2c542c13a2e1e737d46714105b5989fc4bff90be26087a494975f247d82207ca",
+    "name": "Moran Dinur",
+    "amount": 40.0
+  },
+  {
+    "hash": "975d0317b7863a162c1e2dcf54ad29f89914b78683821c5fd8b327904c210a9d",
+    "name": "Maytal Azaria",
     "amount": 40.0
   },
   {
     "hash": "700ff4c5bdf1fa0fb29476d136a5fa2d7c3e203adfc3f2b5841f09def3c55c2c",
     "name": "Lior Josef",
-    "amount": 70.0
+    "amount": 40.0
   },
   {
-    "hash": "700ff4c5bdf1fa0fb29476d136a5fa2d7c3e203adfc3f2b5841f09def3c55c2c",
-    "name": "Lior Josef",
-    "amount": -700.0
+    "hash": "6bcef14376fdb4890564661a3fb2fe6fb6330e6654f6f1b52b79366f3aab48f1",
+    "name": "Noa Tal",
+    "amount": 40.0
+  },
+  {
+    "hash": "7c9514dc62a79abe6cfb5b72122ca4425450d317371a627ef20b7c4748aefeed",
+    "name": "רואי רייכר",
+    "amount": 40.0
+  },
+  {
+    "hash": "5be14c46086ebc410bd13c3efda6e2a06889116261ba48ac3fc26b6c86cf997a",
+    "name": "Mor Ram-On",
+    "amount": 40.0
+  },
+  {
+    "hash": "b42746d529f7e8432e10e02a7f969cf936450fa8bd2d0323828adf26a3a17512",
+    "name": "Raz Bussi",
+    "amount": 40.0
+  },
+  {
+    "hash": "c3409f0a566f572034a72353a857e2c0e18ea6c9a7ee57d1d02dace69878894b",
+    "name": "בת עמי פנחס נאור",
+    "amount": 40.0
+  },
+  {
+    "hash": "559e8d3bdb26f5cad37eff1ad9897110f9f83bf724c83698c8ca32976b6173d2",
+    "name": "Netanel Ronen",
+    "amount": 40.0
+  },
+  {
+    "hash": "8645408e08f02771793c81e4cd9140b9f004bc1280f7bcc418205fd027591f35",
+    "name": "נועה חן",
+    "amount": 80.0
+  },
+  {
+    "hash": "5abf6e626257e68032966b3e873098d7f21adeff23032fd561f182d640b59ad6",
+    "name": "Bracha Zaafran",
+    "amount": 40.0
+  },
+  {
+    "hash": "06e9ca6fc1220a0e048e308e237c058df52c562f055158e63f57399f1c2b646d",
+    "name": "קרן חורי",
+    "amount": 40.0
+  },
+  {
+    "hash": "d28a03cc9a3b43649b26411504e5ac7cbbe6f8b70037df91023a9e86e6ae93d7",
+    "name": "Dorin Gilad",
+    "amount": 40.0
+  },
+  {
+    "hash": "e0de2e8b03de99bd40d724a6f71914a3fb17afec6d43ed22045005b0e611eaa2",
+    "name": "נגה שריד",
+    "amount": 40.0
+  },
+  {
+    "hash": "e0de2e8b03de99bd40d724a6f71914a3fb17afec6d43ed22045005b0e611eaa2",
+    "name": "נגה שריד",
+    "amount": 40.0
+  },
+  {
+    "hash": "a19b1d888b1bfe9926b083354dc92b390c99855567e6fce87eed650b03c55be4",
+    "name": "leeat fisher",
+    "amount": 80.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": 80.0
+  },
+  {
+    "hash": "d900290e125e3bbb0ec75001e66520307f5a0f8100c0b839b9fa558390c7a0ce",
+    "name": "Reut Vinitsky",
+    "amount": 40.0
+  },
+  {
+    "hash": "3af09b98940a08f06fae2690e81f941ce7b7265e21924ff2bdc19fae3fdf218e",
+    "name": "or salab",
+    "amount": 40.0
+  },
+  {
+    "hash": "cb7ef2b758ab0c96eeeb3fc89dcf6f12511140322b31568997585930223552b2",
+    "name": "Or Malca",
+    "amount": 40.0
+  },
+  {
+    "hash": "792b461a58784e71f6944951abd75b3e21d108fefa20e52a08599863fa6986d4",
+    "name": "Eyal Shani",
+    "amount": 40.0
+  },
+  {
+    "hash": "e11a9c5e883c9fdf1dbcb94a3f297d8272153c65ee70cfba12cbc5a2a268444e",
+    "name": "נינה ברגשטיין",
+    "amount": 120.0
+  },
+  {
+    "hash": "e71b993ad4ce426bf60647626bcadab52e263d54ade2f54171d771b3bd956c7d",
+    "name": "Shoval Eden",
+    "amount": 40.0
+  },
+  {
+    "hash": "4cc996ad08033c1a12c297d29c60aec5f23d4009bdf2f23aa707e9666a7d2515",
+    "name": "Ayala Zilberman",
+    "amount": 40.0
+  },
+  {
+    "hash": "7ae177b2c5a2001c3362d4d38231e5b102f3eedaa040cfc39e334852746a6ab4",
+    "name": "Maya Lustig",
+    "amount": 360.0
+  },
+  {
+    "hash": "672d4f2aaa201d15b2895d999f14082f6cc70cac2b7675c122c7ad671f7a4cc8",
+    "name": "Roi Flexer",
+    "amount": 40.0
+  },
+  {
+    "hash": "f7b4c7902b9067db371ec215081c7078504e1f8df6c1320d680223caaddb2699",
+    "name": "שני בן שושן",
+    "amount": 40.0
+  },
+  {
+    "hash": "d5ba3c3aa40fc345a8da5a119391d71f00a171008f514e421525b24973465581",
+    "name": "Nir Benya",
+    "amount": 40.0
+  },
+  {
+    "hash": "59822312ee187f4e0d0f9412d8186aba15d6505d26ef9cca3051080d1acdd1fa",
+    "name": "Lior Ephod",
+    "amount": 40.0
+  },
+  {
+    "hash": "1461da44e299829676a4f685a1eb7fde3324a1fd5067126b21f19be1a3e8abc3",
+    "name": "אביב שילה",
+    "amount": 60.0
+  },
+  {
+    "hash": "a50d574e4d59f4802295e01302081a4d45c2b83d88cd9230eb13ac8131a78e02",
+    "name": "Lior Assayag",
+    "amount": 30.0
+  },
+  {
+    "hash": "1433735e8e8699432537ab3b78a8f18f125f37acf4d05634efc2e60ae3e91a40",
+    "name": "Lior Lapid",
+    "amount": 80.0
+  },
+  {
+    "hash": "3d24e4ed331b5cb8276adc0fa68aaa8fe9537ac4ed20a106a6a1952b8357967b",
+    "name": "Chen Keren",
+    "amount": 40.0
+  },
+  {
+    "hash": "3fe8e8c4e5345198e8bcfe7b2363a5191f61bf8d313cd9a3fd22007f632f8cb3",
+    "name": "סיגל קליין",
+    "amount": 40.0
+  },
+  {
+    "hash": "9c2ff36f011786d85626823be495a5b92bc5fab1aa83eef711b2675e99678b5b",
+    "name": "רותם פלה",
+    "amount": 40.0
+  },
+  {
+    "hash": "3d24e4ed331b5cb8276adc0fa68aaa8fe9537ac4ed20a106a6a1952b8357967b",
+    "name": "Chen Keren",
+    "amount": 40.0
+  },
+  {
+    "hash": "141e3476612e2c5e803a11ff0f487874329addfd673334cf4383a108fb81f101",
+    "name": "שניר אברהם",
+    "amount": 40.0
+  },
+  {
+    "hash": "df4b6dff8a922fdf10fa84cb1c65d0457fffd5bfc9b91a0cd15a6eb9d934ec20",
+    "name": "Nurit Schneider",
+    "amount": 80.0
+  },
+  {
+    "hash": "b6568b9a2bc09f3418c10cd33935a3f5553581c4d8f5bc5e953fc70fdf2bdb43",
+    "name": "Tali Sharon",
+    "amount": 80.0
+  },
+  {
+    "hash": "6bcef14376fdb4890564661a3fb2fe6fb6330e6654f6f1b52b79366f3aab48f1",
+    "name": "Noa Tal",
+    "amount": 40.0
+  },
+  {
+    "hash": "bdd360e91a989c2e65a7ddfb6063810db3f220fd40a66dad455d5dd105d36619",
+    "name": "Maya Mayberg",
+    "amount": 40.0
+  },
+  {
+    "hash": "e30e47d79248eb510a4465b672a6cee257d12199a3549b89f7cc2a54a1e39743",
+    "name": "ליאור אייזיק",
+    "amount": 40.0
+  },
+  {
+    "hash": "9f3ec4c1f093408c95c7ef5679803cd09e272f15e6db8623e14df136e3f609ff",
+    "name": "ליאור בר",
+    "amount": 40.0
+  },
+  {
+    "hash": "cf2b538b3edaf08d1d96fef370d0774327f4525071fbfd73269ecc5aa3d4009d",
+    "name": "נועה פארי",
+    "amount": 20.0
+  },
+  {
+    "hash": "7a097cae4088ec6a3c414ba13af88623bf372d478c6fb5c43d66bc956d7a35b2",
+    "name": "ירדן קולר",
+    "amount": 40.0
+  },
+  {
+    "hash": "f6134627d86aaa8c74275d8bed43cbe63b1bef659bc3bb77cfb51d1ad5dab38f",
+    "name": "Lidor Ziflinger",
+    "amount": 40.0
+  },
+  {
+    "hash": "7264807b27d9ea49bd3f06399873a5dc58dc5ebe2a13f5dba04507153b8369e8",
+    "name": "Ruth Zucker",
+    "amount": 40.0
+  },
+  {
+    "hash": "24f1686c777cc3eb72fea6cb52a8f8815b2b565d4b82df595310eace8c0809b1",
+    "name": "Liel Peer",
+    "amount": 40.0
+  },
+  {
+    "hash": "3b554fefc8d7c17a4afd001397ae0fd419091d0e92523d227369a6ef479d2c7b",
+    "name": "Yuval Ohana",
+    "amount": 80.0
+  },
+  {
+    "hash": "cf14623b796e7cd1b3e51737b5a7da5ac0cd4f5df9f72f1b958836b7456d83dd",
+    "name": "Tomer Muster",
+    "amount": 40.0
+  },
+  {
+    "hash": "7d16d711c32239390b500eaced551a181198df10b446a1f8d771e4f803428d34",
+    "name": "Shir Lebel",
+    "amount": 80.0
+  },
+  {
+    "hash": "2e560dd442ee1d72ebf25855bdb93cb051fdb0dc6ac57b4fd8e481d93c9310d2",
+    "name": "נדב לרר",
+    "amount": 40.0
+  },
+  {
+    "hash": "24e46c995d7713b1c27230fa6ef8cd1fb66a9863768670a20a23a7d575954168",
+    "name": "Goni Levin Haimi",
+    "amount": 40.0
+  },
+  {
+    "hash": "3e4e0ebab27d4f7f4cab5b022266a492b0b0324b4a024ab66e6c9da12a0a94f7",
+    "name": "Rachel Slu",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": 120.0
+  },
+  {
+    "hash": "a0ef6f7f5ce89118669b5c28056009f3b0ca0de76d987bfc3cf184e70782896b",
+    "name": "אסף שמעוני",
+    "amount": 40.0
+  },
+  {
+    "hash": "8068043a1ec200bd4f327079cf4139369d4fad8c9eb665387824d6b36a06c85a",
+    "name": "Stav Harel",
+    "amount": 40.0
+  },
+  {
+    "hash": "1f40aeb8476a66e558efe74303eebe685d6ae47ff9583d081d9ed544a410903c",
+    "name": "Lital Bachar",
+    "amount": 40.0
+  },
+  {
+    "hash": "fb040ae673ddaa2a110a22fc56b7977531d110c12337c456714bd7b329395d40",
+    "name": "Beki Shreiber",
+    "amount": 40.0
+  },
+  {
+    "hash": "3b11347cf5d81b707c90066d5a5e02f514b61f3956628b36ae2f350544a73ca5",
+    "name": "Afik Levi",
+    "amount": 40.0
+  },
+  {
+    "hash": "31c21a28f77437448a37a46d0d931ccd26522f4c460228e8175a2ffbfa5d0daf",
+    "name": "Ortal Mualem",
+    "amount": 40.0
+  },
+  {
+    "hash": "062639af72190349668d98ba5fc615de54d71e3d978d6e6b90e3b80ca3b4852f",
+    "name": "תמר ברייר",
+    "amount": 40.0
+  },
+  {
+    "hash": "4b792c8feb8f2a0067149c10122221a4cb6ff22db0812f01745c4a72443cab1d",
+    "name": "Violetta Ordinov",
+    "amount": 40.0
+  },
+  {
+    "hash": "4b792c8feb8f2a0067149c10122221a4cb6ff22db0812f01745c4a72443cab1d",
+    "name": "Violetta Ordinov",
+    "amount": 40.0
+  },
+  {
+    "hash": "ae3c9c3af8b3aff7fa2d9f27e4c631582e9945cc258f64a58400084c55d7b964",
+    "name": "ליאת רוזמן",
+    "amount": 40.0
+  },
+  {
+    "hash": "30817b43724bb33112e5a04b193d62ce06b5636826ee76b6d7d8a3d33e820603",
+    "name": "אורטל נועם",
+    "amount": 40.0
+  },
+  {
+    "hash": "c35094906f286899f1d48536a034d25e7afc4d1b5a0bab664d86942a6ee14a96",
+    "name": "Michael Brumshtein",
+    "amount": 40.0
+  },
+  {
+    "hash": "e9b5f5460b3f89ab0a9f74695bff5d88fb1c863e7c4ca1ab2fe108696ec23811",
+    "name": "תמיר ישראלי",
+    "amount": 40.0
+  },
+  {
+    "hash": "bba7d535b263b6edf6836f9ea4e71760497ea6cd0e6b14ba3ad14632de73d1bf",
+    "name": "Kobi Stav",
+    "amount": 80.0
+  },
+  {
+    "hash": "15f2e1b5e26409261ab0bc27ca1260f467c46e8eb4d251833e58d3b5adcb3447",
+    "name": "Gal Arnon",
+    "amount": 40.0
+  },
+  {
+    "hash": "a25bfabc91177d8519f3d7e82ce1a954d13fba60e8caa9ab2397cb3ea3589074",
+    "name": "מאיה קמינסקי",
+    "amount": 40.0
+  },
+  {
+    "hash": "a25bfabc91177d8519f3d7e82ce1a954d13fba60e8caa9ab2397cb3ea3589074",
+    "name": "מאיה קמינסקי",
+    "amount": 40.0
+  },
+  {
+    "hash": "726287a7af7c85d31e808237356fa3c65330ef40a6895ace5de494a72fe5706f",
+    "name": "נורית צור",
+    "amount": 40.0
+  },
+  {
+    "hash": "ca9a23cf4c503bda5d3524d633b025f51199eeae139ede00b84d054afaaea88e",
+    "name": "Noa Be",
+    "amount": 40.0
+  },
+  {
+    "hash": "4cc996ad08033c1a12c297d29c60aec5f23d4009bdf2f23aa707e9666a7d2515",
+    "name": "Ayala Zilberman",
+    "amount": 40.0
+  },
+  {
+    "hash": "bde70cda051cbcaed7b0568d1ed9dee5f4fc2f0a924eaae0cc774194a8ef75ec",
+    "name": "Oksana Nadiv",
+    "amount": 40.0
+  },
+  {
+    "hash": "974251f5504b65c36060d8d92f94a48b77afc43ab14774efc28bd5e35f308e1b",
+    "name": "אלונה שטיקן",
+    "amount": 40.0
+  },
+  {
+    "hash": "594db1f9b9557ddfe88eb7078ff51a9379f83813dfc3b742ca6d555ef34ac673",
+    "name": "Matan Bichacho",
+    "amount": 40.0
+  },
+  {
+    "hash": "594db1f9b9557ddfe88eb7078ff51a9379f83813dfc3b742ca6d555ef34ac673",
+    "name": "Matan Bichacho",
+    "amount": 40.0
+  },
+  {
+    "hash": "cda578a7a345a0ee1ebedc4e6caa4e4e91e9bdf8d2e7ada871a13666a572d6ad",
+    "name": "Beth Kabudi",
+    "amount": 40.0
+  },
+  {
+    "hash": "8eb005b080fe03be60b64e9bd6a924a86785a12e5002e21fa36d09869ba30be3",
+    "name": "גירד רוזנפלד",
+    "amount": 40.0
+  },
+  {
+    "hash": "ae7e84cb6f90610d3f8cc1138166d7cfc7035676d19407fe94cddc659a8e05ec",
+    "name": "hila senderovich",
+    "amount": 40.0
+  },
+  {
+    "hash": "dff1da6594ccc235ec99ea4e26e24916c5f844d8c4b421c6a0b79b14380a3989",
+    "name": "אוראל סולומון",
+    "amount": 40.0
+  },
+  {
+    "hash": "dff1da6594ccc235ec99ea4e26e24916c5f844d8c4b421c6a0b79b14380a3989",
+    "name": "אוראל סולומון",
+    "amount": 40.0
+  },
+  {
+    "hash": "2c79239df0b712c47d2ee123fccda9850687558f4d5dbe269fa0e992c268dba2",
+    "name": "Melany Benjamin",
+    "amount": 40.0
+  },
+  {
+    "hash": "ae7034f37cff94206ab97698cd2742ab6e493d0036897cb7a0873aee45d74d53",
+    "name": "Nir Levy",
+    "amount": 40.0
+  },
+  {
+    "hash": "2c5d7630116bff7f95dba8ec186802adf7bd5d8c96764b69b59d24edffde1fec",
+    "name": "מעיין ישראל",
+    "amount": 40.0
+  },
+  {
+    "hash": "a54ca0212c7593d8f1700a40d18e8c00c198f04d1ca7ca7ebe06095e190bc6c4",
+    "name": "Sophie kushkuley",
+    "amount": 40.0
+  },
+  {
+    "hash": "6a69afb825a138c31e2c5bcc2863e9b8c2b3ad284a33e01c9093d148e49e147b",
+    "name": "Shanir Israeli",
+    "amount": 40.0
+  },
+  {
+    "hash": "e9d1039dbcea75fba7bf718e7c36780f2977495581468febe3b67249a4584f60",
+    "name": "דנה בן חיל",
+    "amount": 40.0
+  },
+  {
+    "hash": "594db1f9b9557ddfe88eb7078ff51a9379f83813dfc3b742ca6d555ef34ac673",
+    "name": "Matan Bichacho",
+    "amount": 40.0
+  },
+  {
+    "hash": "9802c49b5e76f91c182e8965031cd53865d7dbfd3e6118b3b947600f1da67cfd",
+    "name": "Shlomi Bisa",
+    "amount": 40.0
+  },
+  {
+    "hash": "e1c38037422390b78dca6bdbfc7dbf2603ef0d3388061bccf32ae7ac671adf70",
+    "name": "הילה לבב",
+    "amount": 40.0
+  },
+  {
+    "hash": "f0c4f436e40f64487104355ff79f17c4ed693d3ea5423cccc873bf9da8590086",
+    "name": "Lior Ben-ari Waizinger",
+    "amount": 40.0
+  },
+  {
+    "hash": "19205428001eff2a9688a7b3be2abdfb47841fecd4819defacffb1c13531477e",
+    "name": "Gal Buzaglo",
+    "amount": 40.0
+  },
+  {
+    "hash": "f0c4f436e40f64487104355ff79f17c4ed693d3ea5423cccc873bf9da8590086",
+    "name": "Lior Ben-ari Waizinger",
+    "amount": 40.0
+  },
+  {
+    "hash": "4ea6928b651eec83bf5a06f26a815560d5d550e8d740f0498fcb0a1f2418bfbf",
+    "name": "ליאור שטרית",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": 80.0
+  },
+  {
+    "hash": "9802c49b5e76f91c182e8965031cd53865d7dbfd3e6118b3b947600f1da67cfd",
+    "name": "Shlomi Bisa",
+    "amount": 40.0
+  },
+  {
+    "hash": "0190e23f43c6dd56ecda5e33bf937bcab65ded2bab30eb3f8ed0d8aad6b13d37",
+    "name": "ספיר הראל",
+    "amount": 40.0
+  },
+  {
+    "hash": "cbd46173da7d537440339626c9e8f56a9025a0652cdc9d718d9633811381278b",
+    "name": "Linor Ungar",
+    "amount": 40.0
+  },
+  {
+    "hash": "cbd46173da7d537440339626c9e8f56a9025a0652cdc9d718d9633811381278b",
+    "name": "Linor Ungar",
+    "amount": 40.0
+  },
+  {
+    "hash": "3a30c39fb3b796ec2f59eac5f288e897cd398c73f584456c832869efc48ba415",
+    "name": "ilan schreter",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": -1500.0
+  },
+  {
+    "hash": "40dc43e09ea1c6ba7190b0e3f17af30940fac68089fcde367601ff0f10bf54a6",
+    "name": "Ella Kanevsky",
+    "amount": 40.0
+  },
+  {
+    "hash": "8f122151cb8077fc2342e5f9f2f1f59ab4a2068888340b8ba730f74d90347d49",
+    "name": "הדס רמון",
+    "amount": 40.0
+  },
+  {
+    "hash": "8aa38e7567b277d363c97ccd1508e423db060981dfae8e298b37333ef3bb5b14",
+    "name": "Dvir Shechter",
+    "amount": 40.0
+  },
+  {
+    "hash": "255d8d0d560e6ea0e12b57e980f8b943e3c478ed9c77e9d1627336cde65c9299",
+    "name": "Meital Mazuz",
+    "amount": 40.0
+  },
+  {
+    "hash": "852d5a3d30f96196f2666b20999ec011ed9e68e746faeb03b75c85a95fc6c4c8",
+    "name": "יעל שייה",
+    "amount": 40.0
+  },
+  {
+    "hash": "fa0693d3f8111647a2b7c36bf970a868f43a9ccc6c5352a32995fc6048b5eeb0",
+    "name": "רחלי שפיגל",
+    "amount": 40.0
+  },
+  {
+    "hash": "f0d305f6443976bbdbbd9963d9c8a9f3549d6a9b605a0ea64230e0b05299901f",
+    "name": "Inbal Gershenowich",
+    "amount": 40.0
+  },
+  {
+    "hash": "36a2cf9c79594fd2547eb89df2c9af1416d0fe6e72661126eb31cfb419e527f8",
+    "name": "מוריה כהן",
+    "amount": 40.0
+  },
+  {
+    "hash": "ecc2aec79128509bb036eebb1d25526ee881333d3db265b2e740eecd113ef866",
+    "name": "נבט גמליאל",
+    "amount": 40.0
+  },
+  {
+    "hash": "ecc2aec79128509bb036eebb1d25526ee881333d3db265b2e740eecd113ef866",
+    "name": "נבט גמליאל",
+    "amount": 40.0
+  },
+  {
+    "hash": "04892e32c8c771bab53691d1481cda8e1094379c25cf223000398d0379b3845c",
+    "name": "Anat Robinson",
+    "amount": 40.0
+  },
+  {
+    "hash": "85d74d6240d435dbbe15e2e57b550cca0154d8e9daa34189e786ed80cc00b645",
+    "name": "ענבר מיכלס",
+    "amount": 40.0
+  },
+  {
+    "hash": "6001d59f43b74834a0a88baedc72171bde7bc5656c5285cf054c388dbb84ca84",
+    "name": "צליל גאני",
+    "amount": 40.0
+  },
+  {
+    "hash": "75a2e65989b8de2c7d7b17b6ca2312f90c87ee7c1e7540125445f14a50bada70",
+    "name": "פז שמש",
+    "amount": 40.0
+  },
+  {
+    "hash": "21690af29e0651f54d1f01a988452cfd6806827a7f6687c899d08b90c499604c",
+    "name": "Shoam Bach",
+    "amount": 40.0
+  },
+  {
+    "hash": "141e3476612e2c5e803a11ff0f487874329addfd673334cf4383a108fb81f101",
+    "name": "שניר אברהם",
+    "amount": 40.0
+  },
+  {
+    "hash": "714c0adcce0978eefc23d2b646fd5613a60628b0c1058c2ac0cee0f8357b8f50",
+    "name": "בן ברקו",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": -6530.0
+  },
+  {
+    "hash": "255d8d0d560e6ea0e12b57e980f8b943e3c478ed9c77e9d1627336cde65c9299",
+    "name": "Meital Mazuz",
+    "amount": 40.0
+  },
+  {
+    "hash": "e8f30138580195c57aff4df4c0ee5fd3cd8df2e7e7e5f273bf8ce54a903b61e5",
+    "name": "Dror Peretz",
+    "amount": -40.0
   }
 ]
