@@ -9,16 +9,19 @@
     #result { margin-top: 20px; font-size: 1.5em; }
     .approved { color: green; }
     .rejected { color: red; }
+    #approve-btn { margin-top: 20px; padding: 10px 20px; font-size: 1.2em; display: none; }
   </style>
 </head>
 <body>
   <h1>QR Scanner & Verifier</h1>
   <div id="reader" style="width: 300px; margin: auto;"></div>
   <div id="result"></div>
+  <button id="approve-btn">Approve</button>
 
   <script>
     let validHashes = [];
     let scannedHashes = JSON.parse(localStorage.getItem('scannedHashes') || '[]');
+    let currentScannedHash = null;
 
     // Load the valid hashes
     fetch('hashes.json')
@@ -36,17 +39,30 @@
 
         if (!validHashes.includes(scannedHash)) {
           document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
+          document.getElementById('approve-btn').style.display = 'none';
         } else if (scannedHashes.includes(scannedHash)) {
           document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
+          document.getElementById('approve-btn').style.display = 'none';
         } else {
-          scannedHashes.push(scannedHash);
-          localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
-          document.getElementById('result').innerHTML = '<span class="approved">Approved!</span>';
+          currentScannedHash = scannedHash;
+          document.getElementById('result').innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
+          document.getElementById('approve-btn').style.display = 'inline-block';
         }
       } else {
         document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
+        document.getElementById('approve-btn').style.display = 'none';
       }
     }
+
+    document.getElementById('approve-btn').addEventListener('click', function() {
+      if (currentScannedHash) {
+        scannedHashes.push(currentScannedHash);
+        localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
+        document.getElementById('result').innerHTML = '<span class="approved">QR Approved and Saved!</span>';
+        document.getElementById('approve-btn').style.display = 'none';
+        currentScannedHash = null;
+      }
+    });
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "reader", { fps: 10, qrbox: 250 });
@@ -54,4 +70,3 @@
   </script>
 </body>
 </html>
-
