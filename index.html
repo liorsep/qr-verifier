@@ -2,23 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR Scanner & Verifier</title>
+  <title>Independence 2025 - QR Scanner & Verifier</title>
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 30px; }
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      margin-top: 30px; 
+      background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+      color: white;
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    #reader { background: white; padding: 10px; border-radius: 10px; }
     #result { margin-top: 20px; font-size: 1.5em; }
-    .approved { color: green; }
-    .rejected { color: red; }
-    #approve-btn, #reset-btn { margin-top: 20px; padding: 10px 20px; font-size: 1.2em; display: none; }
+    .approved { color: #00ff00; }
+    .rejected { color: #ff4c4c; }
+    #approve-btn, #reset-btn { margin-top: 20px; padding: 10px 20px; font-size: 1.2em; display: none; border: none; border-radius: 5px; }
+    #approve-btn { background-color: #28a745; color: white; animation: pulse 1s infinite alternate; }
+    #reset-btn { background-color: red; color: white; }
+    h1 { font-size: 2.5em; margin-bottom: 10px; }
+    h2 { font-size: 1.2em; margin-top: 0; }
+
+    /* Floating flags */
+    .flag {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) translateX(0); }
+      100% { transform: translateY(110vh) translateX(50px); }
+    }
+
+    /* Approve button pulse effect */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
   </style>
 </head>
 <body>
-  <h1>QR Scanner & Verifier</h1>
+  <h1>🇮🇱 Independence 2025 🇮🇱</h1>
+  <h2>QR Scanner & Verifier</h2>
+
   <div id="reader" style="width: 300px; margin: auto;"></div>
   <div id="result"></div>
+
   <button id="approve-btn">Approve</button>
   <br>
-  <button id="reset-btn" style="background-color: red; color: white;">Reset Scans</button>
+  <button id="reset-btn">Reset Scans</button>
+
+  <!-- Floating flags -->
+  <div class="flag" style="left: 10%; animation-duration: 10s;">🇮🇱</div>
+  <div class="flag" style="left: 30%; animation-duration: 12s;">🇮🇱</div>
+  <div class="flag" style="left: 50%; animation-duration: 14s;">🇮🇱</div>
+  <div class="flag" style="left: 70%; animation-duration: 11s;">🇮🇱</div>
+  <div class="flag" style="left: 90%; animation-duration: 13s;">🇮🇱</div>
 
   <script>
     let validHashes = [];
@@ -61,7 +105,7 @@
       if (currentScannedHash) {
         scannedHashes.push(currentScannedHash);
         localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
-        document.getElementById('result').innerHTML = '<span class="approved">QR Approved and Saved!</span>';
+        document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved!</span>';
         document.getElementById('approve-btn').style.display = 'none';
         currentScannedHash = null;
       }
