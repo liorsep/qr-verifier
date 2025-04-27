@@ -52,6 +52,7 @@
 
   <div id="reader" style="width: 300px; margin: auto;"></div>
   <div id="result"></div>
+  <div id="person-name" style="margin-top: 10px; font-size: 1.2em;"></div>
 
   <button id="approve-btn">Approve</button>
   <br>
@@ -68,9 +69,10 @@
     let validHashes = [];
     let scannedHashes = JSON.parse(localStorage.getItem('scannedHashes') || '[]');
     let currentScannedHash = null;
+    let currentScannedName = "";
 
-    // Load the valid hashes
-    fetch('hashes.json')
+    // Load the valid hashes with names
+    fetch('hashes_with_names.json')
       .then(response => response.json())
       .then(data => {
         validHashes = data;
@@ -80,24 +82,36 @@
         document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
       });
 
+    function findNameByHash(hash) {
+      const entry = validHashes.find(item => item.hash === hash);
+      return entry ? entry.name : null;
+    }
+
     function onScanSuccess(decodedText) {
       if (decodedText.startsWith('hash=')) {
         const scannedHash = decodedText.replace('hash=', '').trim();
 
-        if (!validHashes.includes(scannedHash)) {
+        const name = findNameByHash(scannedHash);
+
+        if (!name) {
           document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
           document.getElementById('approve-btn').style.display = 'none';
+          document.getElementById('person-name').innerText = "";
         } else if (scannedHashes.includes(scannedHash)) {
           document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
           document.getElementById('approve-btn').style.display = 'none';
+          document.getElementById('person-name').innerText = name;
         } else {
           currentScannedHash = scannedHash;
+          currentScannedName = name;
           document.getElementById('result').innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
           document.getElementById('approve-btn').style.display = 'inline-block';
+          document.getElementById('person-name').innerText = `Name: ${name}`;
         }
       } else {
         document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
         document.getElementById('approve-btn').style.display = 'none';
+        document.getElementById('person-name').innerText = "";
       }
     }
 
@@ -105,9 +119,11 @@
       if (currentScannedHash) {
         scannedHashes.push(currentScannedHash);
         localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
-        document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved!</span>';
+        document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved for ' + currentScannedName + '!</span>';
         document.getElementById('approve-btn').style.display = 'none';
+        document.getElementById('person-name').innerText = "";
         currentScannedHash = null;
+        currentScannedName = "";
       }
     });
 
