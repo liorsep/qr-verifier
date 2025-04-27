@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Independence 2025 - QR Scanner & Verifier</title>
-  <div id="login-form">
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="handleLogin()">Login</button>
-  </div>
-  <div id="app-content" style="display:none;">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <style>
     body { 
@@ -54,6 +48,12 @@
   </style>
 </head>
 <body>
+  <div id="login-form">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleLogin()">Login</button>
+  </div>
+  <div id="app-content" style="display:none;">
   <h1>🇮🇱 Independence 2025 🇮🇱</h1>
   <h2>QR Scanner & Verifier</h2>
 
@@ -74,8 +74,7 @@
 
   <script>
     let validHashes = [];
-    let scannedHashes = JSON.parse(localStorage.getItem('scannedHashes') || '[]');
-    let currentScannedHash = null;
+    let approvedHashes = [];
     let currentScannedName = "";
 
     // Load the valid hashes with names
@@ -93,16 +92,15 @@
        return validHashes.find(item => item.hash === hash);
       }
 
-      const sharedPassword = "Happy77Party";
-
-    function login(password) {
-      if (password === sharedPassword) {
-        alert("Welcome to the party app!");
-        // Continue to app
-      } else {
-        alert("Wrong password!");
-      }
-    }
+      fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i') // <--- your SheetDB URL for approvals
+        .then(response => response.json())
+        .then(data => {
+          approvedHashes = data.map(entry => entry.Hash); // assuming you store Hash in the sheet
+          document.getElementById('reset-btn').style.display = 'inline-block';
+        })
+        .catch(err => {
+          console.error('Failed to load approved list:', err);
+        });
 
     function onScanSuccess(decodedText) {
       if (decodedText.startsWith('hash=')) {
@@ -114,7 +112,7 @@
           document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
           document.getElementById('approve-btn').style.display = 'none';
           document.getElementById('person-name').innerText = "";
-        } else if (scannedHashes.includes(scannedHash)) {
+        } else if (approvedHashes.includes(scannedHash)) { // <-- changed here
           document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
           document.getElementById('approve-btn').style.display = 'none';
           document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
@@ -126,6 +124,7 @@
           document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         }
 
+
       } else {
         document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
         document.getElementById('approve-btn').style.display = 'none';
@@ -135,8 +134,11 @@
 
     document.getElementById('approve-btn').addEventListener('click', function() {
       if (currentScannedHash) {
-        scannedHashes.push(currentScannedHash);
-        localStorage.setItem('scannedHashes', JSON.stringify(scannedHashes));
+        const entry = findEntryByHash(currentScannedHash);
+        if (entry) {
+          saveApproval(entry.name, entry.phone || '', entry.amount || '');
+          approvedHashes.push(currentScannedHash); // update the local memory
+        }
         document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved for ' + currentScannedName + '!</span>';
         document.getElementById('approve-btn').style.display = 'none';
         document.getElementById('person-name').innerText = "";
@@ -145,17 +147,46 @@
       }
     });
 
+
     document.getElementById('reset-btn').addEventListener('click', function() {
-      if (confirm('Are you sure you want to reset all scanned QR approvals?')) {
-        localStorage.removeItem('scannedHashes');
-        scannedHashes = [];
-        document.getElementById('result').innerHTML = '<span class="approved">All scanned records have been reset.</span>';
+      if (confirm('Reload the app?')) {
+        location.reload();
       }
     });
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
+
+    function saveApproval(name, number, amount) {
+    const data = {
+      data: [
+        {
+          Name: name,
+          Phone: number,
+          Amount: amount,
+          "Approved At": new Date().toISOString()
+        }
+      ]
+    };
+
+    fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i', { // <-- replace with your real URL
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Approval saved successfully!');
+      } else {
+        console.error('Failed to save approval');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+
   </script>
   </div>
   <script>
