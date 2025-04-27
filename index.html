@@ -160,7 +160,9 @@
   <script>
     const validUsers = {
     "lior": "partyparty",
-    "dror":"partyparty"
+    "dror":"partyparty",
+    "Lior": "partyparty",
+    "Dror":"partyparty"
   };
 
     function handleLogin() {
@@ -168,12 +170,25 @@
       const password = document.getElementById('password').value.trim();
 
       if (validUsers[username] === password) {
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('app-content').style.display = 'block';
+        localStorage.setItem('isLoggedIn', 'true');  // Save login in localStorage
+        showApp();
       } else {
         alert('Invalid username or password!');
       }
     }
+
+    function showApp() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('app-content').style.display = 'block';
+    }
+
+    function checkLogin() {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        showApp();
+      }
+    }
+
+    window.onload = checkLogin;
   </script>
 </body>
 </html>
