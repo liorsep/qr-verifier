@@ -86,6 +86,16 @@
        return validHashes.find(item => item.hash === hash);
       }
 
+      const sharedPassword = "Happy77Party";
+
+    function login(password) {
+      if (password === sharedPassword) {
+        alert("Welcome to the party app!");
+        // Continue to app
+      } else {
+        alert("Wrong password!");
+      }
+    }
 
     function onScanSuccess(decodedText) {
       if (decodedText.startsWith('hash=')) {
