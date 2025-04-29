@@ -172,18 +172,18 @@
       }
 
       // Camera scanner
-      const html5QrCode = new Html5Qrcode("reader");
       Html5Qrcode.getCameras().then(cameras => {
-        if (cameras && cameras.length) {
-          html5QrCode.start(
-            cameras[0].id,
-            { fps: 10, qrbox: 250 },
-            onScanSuccess
-          );
-        }
-      }).catch(err => {
-        console.error("Camera error:", err);
-      });
+      if (cameras && cameras.length) {
+        // Try to find the back camera
+        const backCamera = cameras.find(cam => /back|rear|environment/i.test(cam.label)) || cameras[0];
+
+        html5QrCode.start(
+          backCamera.id,
+          { fps: 10, qrbox: 250 },
+          onScanSuccess
+        );
+      }
+    });
 
       // Image upload support
       document.getElementById("qr-image").addEventListener("change", function (e) {
