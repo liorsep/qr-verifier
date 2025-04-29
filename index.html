@@ -212,7 +212,7 @@
       document.getElementById("qr-image").addEventListener("change", e => {
         const file = e.target.files[0];
         if (!file) return;
-        html5QrCode.scanFile(file, true).then(onScanSuccess).catch(err => {
+        html5QrCode.scanFile(file, true).then(async (result) => await onScanSuccess(result)).catch(err => {
           document.getElementById("result").innerHTML = '<span class="rejected">Invalid QR Image.</span>';
           console.error("Scan failed:", err);
         });
