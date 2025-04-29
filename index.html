@@ -155,35 +155,8 @@
     // });
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
-      const html5QrCode = new Html5Qrcode("reader");
-
-    Html5Qrcode.getCameras().then(cameras => {
-      if (cameras && cameras.length) {
-        html5QrCode.start(
-          cameras[0].id,
-          { fps: 10, qrbox: 250 },
-          onScanSuccess
-        );
-      }
-    }).catch(err => {
-      console.error("Camera error:", err);
-    });
-
-    // Enable QR image upload
-    document.getElementById("reader").insertAdjacentHTML("afterend", `
-      <input type="file" id="qr-image" accept="image/*" style="margin-top: 15px;">
-    `);
-
-    document.getElementById("qr-image").addEventListener("change", function (e) {
-      if (e.target.files.length === 0) return;
-      const file = e.target.files[0];
-      html5QrCode.scanFile(file, true)
-        .then(onScanSuccess)
-        .catch(err => {
-          document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Image.</span>';
-          console.error("Scan failed:", err);
-        });
-    });
+      "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
 
     function saveApproval(name, number, amount, hash) {
     const data = {
