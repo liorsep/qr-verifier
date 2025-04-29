@@ -94,6 +94,8 @@
     <div id="person-name" style="margin-top: 10px; font-size: 1.2em;"></div>
 
     <button id="approve-btn">Approve</button>
+    <button id="cancel-btn" style="display:none; margin-left: 10px; background-color:#dc3545; color:white;">Cancel</button>
+
 
     <!-- Floating flags -->
     <div class="flag" style="left: 10%; animation-duration: 10s;">🇮🇱</div>
@@ -124,7 +126,7 @@
         return validHashes.find(item => item.hash === hash);
       }
 
-      function onScanSuccess(decodedText) {
+      async function onScanSuccess(decodedText) {
         if (!decodedText.startsWith("hash=")) {
           document.getElementById("result").innerHTML = '<span class="rejected">Invalid QR Format.</span>';
           return;
@@ -140,6 +142,7 @@
         } else if (approvedHashes.includes(scannedHash)) {
           document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name})</span>'`;
           document.getElementById("approve-btn").style.display = "none";
+          document.getElementById("cancel-btn").style.display = "none";
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         } else {
           currentScannedHash = scannedHash;
@@ -147,6 +150,16 @@
           document.getElementById("result").innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
           document.getElementById("approve-btn").disabled = false;
           document.getElementById("approve-btn").style.display = "inline-block";
+          document.getElementById("cancel-btn").addEventListener("click", () => {
+            currentScannedHash = null;
+            currentScannedName = "";
+            document.getElementById("result").innerText = "";
+            document.getElementById("person-name").innerText = "";
+            document.getElementById("approve-btn").style.display = "none";
+            document.getElementById("cancel-btn").style.display = "none";
+            startCamera();
+          });
+          await html5QrCode.stop();
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         }
       }
@@ -180,9 +193,11 @@
         }
         document.getElementById("result").innerHTML = `<span class="approved">🎉 QR Approved and Saved for ${currentScannedName}!</span>`;
         document.getElementById("approve-btn").style.display = "none";
+        document.getElementById("cancel-btn").style.display = "none";
         document.getElementById("person-name").innerText = "";
         currentScannedHash = null;
         currentScannedName = "";
+        startCamera();
       });
 
       function startCamera() {
