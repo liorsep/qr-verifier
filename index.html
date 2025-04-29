@@ -145,6 +145,7 @@
           currentScannedHash = scannedHash;
           currentScannedName = entry.name;
           document.getElementById("result").innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
+          document.getElementById("approve-btn").disabled = false;
           document.getElementById("approve-btn").style.display = "inline-block";
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
         }
