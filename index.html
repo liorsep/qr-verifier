@@ -25,8 +25,6 @@
     #reset-btn { background-color: red; color: white; }
     h1 { font-size: 2.5em; margin-bottom: 10px; }
     h2 { font-size: 1.2em; margin-top: 0; }
-
-    /* Floating flags */
     .flag {
       position: absolute;
       top: -50px;
@@ -34,13 +32,10 @@
       animation: fall linear infinite;
       opacity: 0.8;
     }
-
     @keyframes fall {
       0% { transform: translateY(-100px) translateX(0); }
       100% { transform: translateY(110vh) translateX(50px); }
     }
-
-    /* Approve button pulse effect */
     @keyframes pulse {
       0% { transform: scale(1); }
       100% { transform: scale(1.05); }
@@ -53,46 +48,47 @@
     <input type="password" id="password" placeholder="Password">
     <button onclick="handleLogin()">Login</button>
   </div>
+
   <div id="app-content" style="display:none;">
-  <h1>🇮🇱 Independence 2025 🇮🇱</h1>
-  <h2>QR Scanner & Verifier</h2>
+    <h1>🇮🇱 Independence 2025 🇮🇱</h1>
+    <h2>QR Scanner & Verifier</h2>
 
-  <div id="reader" style="width: 300px; margin: auto;"></div>
-  <div id="result"></div>
-  <div id="person-name" style="margin-top: 10px; font-size: 1.2em;"></div>
+    <div id="reader" style="width: 300px; margin: auto;"></div>
+    <input type="file" id="qr-image" accept="image/*" style="margin-top: 15px;">
+    <div id="result"></div>
+    <div id="person-name" style="margin-top: 10px; font-size: 1.2em;"></div>
 
-  <button id="approve-btn">Approve</button>
-  <br>
-  <!-- <button id="reset-btn">Reset Scans</button> -->
+    <button id="approve-btn">Approve</button>
 
-  <!-- Floating flags -->
-  <div class="flag" style="left: 10%; animation-duration: 10s;">🇮🇱</div>
-  <div class="flag" style="left: 30%; animation-duration: 12s;">🇮🇱</div>
-  <div class="flag" style="left: 50%; animation-duration: 14s;">🇮🇱</div>
-  <div class="flag" style="left: 70%; animation-duration: 11s;">🇮🇱</div>
-  <div class="flag" style="left: 90%; animation-duration: 13s;">🇮🇱</div>
+    <!-- Floating flags -->
+    <div class="flag" style="left: 10%; animation-duration: 10s;">🇮🇱</div>
+    <div class="flag" style="left: 30%; animation-duration: 12s;">🇮🇱</div>
+    <div class="flag" style="left: 50%; animation-duration: 14s;">🇮🇱</div>
+    <div class="flag" style="left: 70%; animation-duration: 11s;">🇮🇱</div>
+    <div class="flag" style="left: 90%; animation-duration: 13s;">🇮🇱</div>
 
-  <script>
-    let validHashes = [];
-    let approvedHashes = [];
-    let currentScannedName = "";
+    <script>
+      let validHashes = [];
+      let approvedHashes = [];
+      let currentScannedHash = null;
+      let currentScannedName = "";
 
-    // Load the valid hashes with names
-    fetch('hashes_with_names.json')
-      .then(response => response.json())
-      .then(data => {
-        validHashes = data;
-      })
-      .catch(err => {
-        document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
-        console.error('Failed to load valid hashes:', err);
-      });
-
-      fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i') // <--- your SheetDB URL for approvals
+      // Load hashes
+      fetch('hashes_with_names.json')
         .then(response => response.json())
         .then(data => {
-          approvedHashes = data.map(entry => entry.Hash); // assuming you store Hash in the sheet
-          document.getElementById('reset-btn').style.display = 'inline-block';
+          validHashes = data;
+        })
+        .catch(err => {
+          document.getElementById('result').innerHTML = '<span class="rejected">Failed to load hashes.</span>';
+          console.error('Failed to load valid hashes:', err);
+        });
+
+      // Load approved list from SheetDB
+      fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i')
+        .then(response => response.json())
+        .then(data => {
+          approvedHashes = data.map(entry => entry.Hash);
         })
         .catch(err => {
           console.error('Failed to load approved list:', err);
@@ -105,13 +101,13 @@
       function onScanSuccess(decodedText) {
         if (decodedText.startsWith('hash=')) {
           const scannedHash = decodedText.replace('hash=', '').trim();
-          const entry = findEntryByHash(scannedHash); // search in validHashes
+          const entry = findEntryByHash(scannedHash);
 
           if (!entry) {
             document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Code.</span>';
             document.getElementById('approve-btn').style.display = 'none';
             document.getElementById('person-name').innerText = "";
-          } else if (approvedHashes.includes(scannedHash)) {  // <--- here you check if already approved
+          } else if (approvedHashes.includes(scannedHash)) {
             document.getElementById('result').innerHTML = '<span class="rejected">Already Scanned.</span>';
             document.getElementById('approve-btn').style.display = 'none';
             document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
@@ -122,7 +118,6 @@
             document.getElementById('approve-btn').style.display = 'inline-block';
             document.getElementById('person-name').innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
           }
-
         } else {
           document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Format.</span>';
           document.getElementById('approve-btn').style.display = 'none';
@@ -130,80 +125,94 @@
         }
       }
 
-
-    document.getElementById('approve-btn').addEventListener('click', function() {
-      document.getElementById('approve-btn').disabled = true;
-      if (currentScannedHash) {
-        const entry = findEntryByHash(currentScannedHash);
-        if (entry) {
-          saveApproval(entry.name, entry.phone || '', entry.amount || '', currentScannedHash);
-          approvedHashes.push(currentScannedHash); // update the local memory
+      document.getElementById('approve-btn').addEventListener('click', function () {
+        document.getElementById('approve-btn').disabled = true;
+        if (currentScannedHash) {
+          const entry = findEntryByHash(currentScannedHash);
+          if (entry) {
+            saveApproval(entry.name, entry.phone || '', entry.amount || '', currentScannedHash);
+            approvedHashes.push(currentScannedHash);
+          }
+          document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved for ' + currentScannedName + '!</span>';
+          document.getElementById('approve-btn').style.display = 'none';
+          document.getElementById('person-name').innerText = "";
+          currentScannedHash = null;
+          currentScannedName = "";
         }
-        document.getElementById('result').innerHTML = '<span class="approved">🎉 QR Approved and Saved for ' + currentScannedName + '!</span>';
-        document.getElementById('approve-btn').style.display = 'none';
-        document.getElementById('person-name').innerText = "";
-        currentScannedHash = null;
-        currentScannedName = "";
+      });
+
+      function saveApproval(name, number, amount, hash) {
+        const data = {
+          data: [
+            {
+              Name: name,
+              Phone: number,
+              Amount: amount,
+              Hash: hash,
+              "Approved At": new Date().toISOString()
+            }
+          ]
+        };
+
+        fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+          if (response.ok) {
+            console.log('Approval saved successfully!');
+          } else {
+            console.error('Failed to save approval');
+          }
+        })
+        .catch(error => console.error('Error:', error));
       }
-    });
 
-
-    // document.getElementById('reset-btn').addEventListener('click', function() {
-    //   if (confirm('Reload the app?')) {
-    //     location.reload();
-    //   }
-    // });
-
-    const html5QrcodeScanner = new Html5QrcodeScanner(
-      "reader", { fps: 10, qrbox: 250 });
-    html5QrcodeScanner.render(onScanSuccess);
-
-    function saveApproval(name, number, amount, hash) {
-    const data = {
-      data: [
-        {
-          Name: name,
-          Phone: number,
-          Amount: amount,
-          Hash: hash,
-          "Approved At": new Date().toISOString()
+      // Camera scanner
+      const html5QrCode = new Html5Qrcode("reader");
+      Html5Qrcode.getCameras().then(cameras => {
+        if (cameras && cameras.length) {
+          html5QrCode.start(
+            cameras[0].id,
+            { fps: 10, qrbox: 250 },
+            onScanSuccess
+          );
         }
-      ]
-    };
+      }).catch(err => {
+        console.error("Camera error:", err);
+      });
 
-    fetch('https://sheetdb.io/api/v1/d1y4cdqajqw5i', { // <-- replace with your real URL
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => {
-      if (response.ok) {
-        console.log('Approval saved successfully!');
-      } else {
-        console.error('Failed to save approval');
-      }
-    })
-    .catch(error => console.error('Error:', error));
-  }
-
-  </script>
+      // Image upload support
+      document.getElementById("qr-image").addEventListener("change", function (e) {
+        if (e.target.files.length === 0) return;
+        const file = e.target.files[0];
+        html5QrCode.scanFile(file, true)
+          .then(onScanSuccess)
+          .catch(err => {
+            document.getElementById('result').innerHTML = '<span class="rejected">Invalid QR Image.</span>';
+            console.error("Scan failed:", err);
+          });
+      });
+    </script>
   </div>
+
   <script>
     const validUsers = {
-    "lior": "partyparty",
-    "dror":"partyparty",
-    "Lior": "partyparty",
-    "Dror":"partyparty"
-  };
+      "lior": "partyparty",
+      "dror": "partyparty",
+      "Lior": "partyparty",
+      "Dror": "partyparty"
+    };
 
     function handleLogin() {
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
 
       if (validUsers[username] === password) {
-        localStorage.setItem('isLoggedIn', 'true');  // Save login in localStorage
+        localStorage.setItem('isLoggedIn', 'true');
         showApp();
       } else {
         alert('Invalid username or password!');
