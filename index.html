@@ -107,6 +107,7 @@
     <script>
       let validHashes = [];
       let approvedHashes = [];
+      let approvalCounts = {};
       let currentScannedHash = null;
       let currentScannedName = "";
       let html5QrCode;
@@ -122,7 +123,12 @@
         fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i")
           .then(res => res.json())
           .then(data => {
-            approvedHashes = data.map(entry => entry.Hash);
+            approvalCounts = {};
+            data.forEach(entry => {
+              const hash = entry.Hash;
+              approvalCounts[hash] = (approvalCounts[hash] || 0) + 1;
+            });
+            // approvedHashes = data.map(entry => entry.Hash);
             console.log("✅ Refreshed approved list from SheetDB");
           });
       }
@@ -146,7 +152,19 @@
           document.getElementById("result").innerHTML = '<span class="rejected">Invalid QR Code.</span>';
           document.getElementById("approve-btn").style.display = "none";
           document.getElementById("person-name").innerText = "";
-        } else if (approvedHashes.includes(scannedHash)) {
+        // } else if (approvedHashes.includes(scannedHash)) {
+        } else {
+          const approvedCount = approvalCounts[scannedHash] || 0;
+          const maxAllowed = entry.counter || 1;
+
+          if (approvedCount >= maxAllowed) {
+            document.getElementById("result").innerHTML = '<span class="rejected">Limit Reached.</span>';
+            document.getElementById("approve-btn").style.display = "none";
+            document.getElementById("cancel-btn").style.display = "none";
+            document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪ | Used: ${approvedCount}/${maxAllowed}`;
+          } else {
+            // allow approval
+          }
           document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name} | Amount: ${entry.amount} )</span>'`;
           document.getElementById("approve-btn").style.display = "none";
           document.getElementById("cancel-btn").style.display = "inline-block";
@@ -210,6 +228,7 @@
           approvedHashes.push(currentScannedHash);
         }
         document.getElementById("result").innerHTML = `<span class="approved">🎉 QR Approved and Saved for ${currentScannedName}!</span>`;
+        approvalCounts[currentScannedHash] = (approvalCounts[currentScannedHash] || 0) + 1;
         document.getElementById("approve-btn").style.display = "none";
         document.getElementById("cancel-btn").style.display = "none";
         document.getElementById("person-name").innerText = "";
