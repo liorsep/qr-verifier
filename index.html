@@ -140,6 +140,15 @@
           document.getElementById("result").innerHTML = '<span class="rejected">Limit Reached.</span>';
           document.getElementById("approve-btn").style.display = "none";
           document.getElementById("cancel-btn").style.display = "inline-block";
+          document.getElementById("cancel-btn").addEventListener("click", () => {
+            currentScannedHash = null;
+            currentScannedName = "";
+            document.getElementById("result").innerText = "";
+            document.getElementById("person-name").innerText = "";
+            document.getElementById("approve-btn").style.display = "none";
+            document.getElementById("cancel-btn").style.display = "none";
+            startCamera();
+          });
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪ | Used: ${approvedCount}/${maxAllowed}`;
           await html5QrCode.stop();
           return;
