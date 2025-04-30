@@ -126,8 +126,7 @@
             console.log("✅ Refreshed approved list from SheetDB");
           });
       }
-
-
+      refreshData(); // load once on page load
       setInterval(refreshData, 60000); // every 60,000 ms = 60 seconds
 
       function findEntryByHash(hash) {
