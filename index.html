@@ -111,16 +111,24 @@
       let currentScannedName = "";
       let html5QrCode;
       let currentMode = "camera";
+      function refreshData() {
+        fetch("hashes_with_names.json?ts=" + new Date().getTime())
+          .then(res => res.json())
+          .then(data => {
+            validHashes = data;
+            console.log("✅ Refreshed hashes_with_names.json");
+          });
 
-      fetch("hashes_with_names.json")
-        .then(res => res.json())
-        .then(data => { validHashes = data; });
+        fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i")
+          .then(res => res.json())
+          .then(data => {
+            approvedHashes = data.map(entry => entry.Hash);
+            console.log("✅ Refreshed approved list from SheetDB");
+          });
+      }
 
-      fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i")
-        .then(res => res.json())
-        .then(data => {
-          approvedHashes = data.map(entry => entry.Hash);
-        });
+
+      setInterval(refreshData, 60000); // every 60,000 ms = 60 seconds
 
       function findEntryByHash(hash) {
         return validHashes.find(item => item.hash === hash);
