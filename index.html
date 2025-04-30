@@ -191,7 +191,7 @@
 
       function saveApproval(name, number, amount, hash) {
         const data = {
-          data: [{ Name: name, Phone: number, Amount: amount, Hash: hash, "Approved At": new Date().toISOString() }]
+          data: [{ Name: name, Phone: number, Amount: amount, Hash: hash, "Approved_At": new Date().toISOString() }]
         };
         fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i", {
           method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
