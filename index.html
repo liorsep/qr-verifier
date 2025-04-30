@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +26,8 @@
       margin-top: 20px;
       font-size: 1.5em;
     }
-    .approved {
-      color: #00ff00;
-    }
-    .rejected {
-      color: #ff4c4c;
-    }
+    .approved { color: #00ff00; }
+    .rejected { color: #ff4c4c; }
     #approve-btn, #toggle-mode-btn {
       margin-top: 20px;
       padding: 10px 20px;
@@ -49,14 +46,8 @@
       background-color: #007bff;
       color: white;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 1.2em;
-      margin-top: 0;
-    }
+    h1 { font-size: 2.5em; margin-bottom: 10px; }
+    h2 { font-size: 1.2em; margin-top: 0; }
     .flag {
       position: absolute;
       top: -50px;
@@ -84,20 +75,14 @@
   <div id="app-content" style="display: none;">
     <h1>🇮🇱 Independence 2025 🇮🇱</h1>
     <h2>QR Scanner & Verifier</h2>
-
     <div id="reader" style="width: 300px; margin: auto;"></div>
     <input type="file" id="qr-image" accept="image/*" style="margin-top: 15px; display: none;" />
     <br />
     <button id="toggle-mode-btn">🖼️ Upload Image</button>
-
     <div id="result"></div>
     <div id="person-name" style="margin-top: 10px; font-size: 1.2em;"></div>
-
     <button id="approve-btn">Approve</button>
     <button id="cancel-btn" style="display:none; margin-left: 10px; background-color:#dc3545; color:white;">Cancel</button>
-
-
-    <!-- Floating flags -->
     <div class="flag" style="left: 10%; animation-duration: 10s;">🇮🇱</div>
     <div class="flag" style="left: 30%; animation-duration: 12s;">🇮🇱</div>
     <div class="flag" style="left: 50%; animation-duration: 14s;">🇮🇱</div>
@@ -106,28 +91,30 @@
 
     <script>
       let validHashes = [];
-      let approvedHashes = [];
+      let approvalCounts = {};
       let currentScannedHash = null;
       let currentScannedName = "";
       let html5QrCode;
       let currentMode = "camera";
+
       function refreshData() {
         fetch("hashes_with_names.json?ts=" + new Date().getTime())
           .then(res => res.json())
-          .then(data => {
-            validHashes = data;
-            console.log("✅ Refreshed hashes_with_names.json");
-          });
+          .then(data => { validHashes = data; });
 
         fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i")
           .then(res => res.json())
           .then(data => {
-            approvedHashes = data.map(entry => entry.Hash);
-            console.log("✅ Refreshed approved list from SheetDB");
+            approvalCounts = {};
+            data.forEach(entry => {
+              const hash = entry.Hash;
+              approvalCounts[hash] = (approvalCounts[hash] || 0) + 1;
+            });
           });
       }
-      refreshData(); // load once on page load
-      setInterval(refreshData, 60000); // every 60,000 ms = 60 seconds
+
+      refreshData();
+      setInterval(refreshData, 60000);
 
       function findEntryByHash(hash) {
         return validHashes.find(item => item.hash === hash);
@@ -141,65 +128,40 @@
 
         const scannedHash = decodedText.replace("hash=", "").trim();
         const entry = findEntryByHash(scannedHash);
-
         if (!entry) {
           document.getElementById("result").innerHTML = '<span class="rejected">Invalid QR Code.</span>';
-          document.getElementById("approve-btn").style.display = "none";
-          document.getElementById("person-name").innerText = "";
-        } else if (approvedHashes.includes(scannedHash)) {
-          document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name} | Amount: ${entry.amount} )</span>'`;
-          document.getElementById("approve-btn").style.display = "none";
-          document.getElementById("cancel-btn").style.display = "inline-block";
-          document.getElementById("cancel-btn").addEventListener("click", () => {
-            currentScannedHash = null;
-            currentScannedName = "";
-            document.getElementById("result").innerText = "";
-            document.getElementById("person-name").innerText = "";
-            document.getElementById("approve-btn").style.display = "none";
-            document.getElementById("cancel-btn").style.display = "none";
-            startCamera();
-          });
-          document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
-          await html5QrCode.stop();
-        } else {
-          currentScannedHash = scannedHash;
-          currentScannedName = entry.name;
-          document.getElementById("result").innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
-          document.getElementById("approve-btn").disabled = false;
-          document.getElementById("approve-btn").style.display = "inline-block";
-          document.getElementById("cancel-btn").style.display = "inline-block";
-          document.getElementById("cancel-btn").addEventListener("click", () => {
-            currentScannedHash = null;
-            currentScannedName = "";
-            document.getElementById("result").innerText = "";
-            document.getElementById("person-name").innerText = "";
-            document.getElementById("approve-btn").style.display = "none";
-            document.getElementById("cancel-btn").style.display = "none";
-            startCamera();
-          });
-          await html5QrCode.stop();
-          document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
+          return;
         }
-      }
 
-      function saveApproval(name, number, amount, hash) {
-        const data = {
-          data: [{
-            Name: name,
-            Phone: number,
-            Amount: amount,
-            Hash: hash,
-            "Approved At": new Date().toISOString()
-          }]
-        };
+        const approvedCount = approvalCounts[scannedHash] || 0;
+        const maxAllowed = entry.counter || 1;
 
-        fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        }).then(res => {
-          if (!res.ok) console.error("Failed to save approval.");
+        if (approvedCount >= maxAllowed) {
+          document.getElementById("result").innerHTML = '<span class="rejected">Limit Reached.</span>';
+          document.getElementById("approve-btn").style.display = "none";
+          document.getElementById("cancel-btn").style.display = "inline-block";
+          document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪ | Used: ${approvedCount}/${maxAllowed}`;
+          await html5QrCode.stop();
+          return;
+        }
+
+        currentScannedHash = scannedHash;
+        currentScannedName = entry.name;
+        document.getElementById("result").innerHTML = '<span class="approved">Valid QR! Please click Approve.</span>';
+        document.getElementById("approve-btn").disabled = false;
+        document.getElementById("approve-btn").style.display = "inline-block";
+        document.getElementById("cancel-btn").style.display = "inline-block";
+        document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪ | Used: ${approvedCount}/${maxAllowed}`;
+        document.getElementById("cancel-btn").addEventListener("click", () => {
+          currentScannedHash = null;
+          currentScannedName = "";
+          document.getElementById("result").innerText = "";
+          document.getElementById("person-name").innerText = "";
+          document.getElementById("approve-btn").style.display = "none";
+          document.getElementById("cancel-btn").style.display = "none";
+          startCamera();
         });
+        await html5QrCode.stop();
       }
 
       document.getElementById("approve-btn").addEventListener("click", () => {
@@ -207,7 +169,7 @@
         const entry = findEntryByHash(currentScannedHash);
         if (entry) {
           saveApproval(entry.name, entry.phone || "", entry.amount || "", currentScannedHash);
-          approvedHashes.push(currentScannedHash);
+          approvalCounts[currentScannedHash] = (approvalCounts[currentScannedHash] || 0) + 1;
         }
         document.getElementById("result").innerHTML = `<span class="approved">🎉 QR Approved and Saved for ${currentScannedName}!</span>`;
         document.getElementById("approve-btn").style.display = "none";
@@ -217,6 +179,15 @@
         currentScannedName = "";
         startCamera();
       });
+
+      function saveApproval(name, number, amount, hash) {
+        const data = {
+          data: [{ Name: name, Phone: number, Amount: amount, Hash: hash, "Approved At": new Date().toISOString() }]
+        };
+        fetch("https://sheetdb.io/api/v1/d1y4cdqajqw5i", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
+        });
+      }
 
       function startCamera() {
         html5QrCode = new Html5Qrcode("reader");
@@ -229,10 +200,7 @@
       document.getElementById("qr-image").addEventListener("change", e => {
         const file = e.target.files[0];
         if (!file) return;
-        html5QrCode.scanFile(file, true).then(async (result) => await onScanSuccess(result)).catch(err => {
-          document.getElementById("result").innerHTML = '<span class="rejected">Invalid QR Image.</span>';
-          console.error("Scan failed:", err);
-        });
+        html5QrCode.scanFile(file, true).then(async result => await onScanSuccess(result));
       });
 
       document.getElementById("toggle-mode-btn").addEventListener("click", () => {
@@ -251,12 +219,8 @@
         }
       });
 
-      // Login system
       const validUsers = {
-        lior: "partyparty",
-        dror: "partyparty",
-        Lior: "partyparty",
-        Dror: "partyparty"
+        lior: "partyparty", dror: "partyparty", Lior: "partyparty", Dror: "partyparty"
       };
 
       function handleLogin() {
@@ -273,7 +237,7 @@
       function showApp() {
         document.getElementById("login-form").style.display = "none";
         document.getElementById("app-content").style.display = "block";
-        startCamera();  // start camera only after login
+        startCamera();
       }
 
       function checkLogin() {
