@@ -67,12 +67,14 @@
   {
     "hash": "33e123cf47e9c2f433d6177cd3d9e87cf9c316aae1f79d162c776fdf80de4eae",
     "name": "שחר עמיר",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "33e123cf47e9c2f433d6177cd3d9e87cf9c316aae1f79d162c776fdf80de4eae",
     "name": "שחר עמיר",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "71bfd44d636b9f5c75f6d21520e34e57e2b2a09b185df1ccda1c228e79f95b03",
@@ -122,12 +124,14 @@
   {
     "hash": "899eb4cf38bc3bf8de14abb0c0988682bffeba234f182a319d35f46c91c516bf",
     "name": "Michal Ben-Yehuda",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "899eb4cf38bc3bf8de14abb0c0988682bffeba234f182a319d35f46c91c516bf",
     "name": "Michal Ben-Yehuda",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "b218c0c874ada1d6988151f313271eae1323eb6ab454687fd3134d3b5ffdd3ae",
@@ -137,12 +141,14 @@
   {
     "hash": "9be94fa5a503536899b60ab9e8e13d6eb58384765b0d6d63b80b583766d76861",
     "name": "Ron Maman",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "9be94fa5a503536899b60ab9e8e13d6eb58384765b0d6d63b80b583766d76861",
     "name": "Ron Maman",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "8a5313968970449f96cb31939766779477b5c16f349758a1d27c80edd53f25c8",
@@ -167,7 +173,8 @@
   {
     "hash": "e1d5570d15c8537c6eaee8795b0d6339141fd98ef508f2a39bbfa281a5e1f070",
     "name": "hila senderovich",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "ec4b0d146d560b3c75dd835e20570993e6f1773d580fb4b6510f7618e1a79e53",
@@ -177,7 +184,8 @@
   {
     "hash": "a3f2856a2768932a4017fb61cfde3707353926bdc1a9cab598d3ce8222da917b",
     "name": "גל דאובר",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "0c731be226ee7725323e08af737582a3681d99b47a24d652d77c9429ff1f2cb0",
@@ -192,7 +200,8 @@
   {
     "hash": "a3f2856a2768932a4017fb61cfde3707353926bdc1a9cab598d3ce8222da917b",
     "name": "גל דאובר",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "8eb7b61f5edaabe493b9f41dcde040a823176ae806d64fcd313f195fadfa9a3d",
@@ -217,7 +226,7 @@
   {
     "hash": "b3e3fd2c5bd97bec97c19c1907fd5025125dd5946dcde7e280e9f4c184de469c",
     "name": "Noa Tal",
-    "amount": 40.0,
+    "amount": 120.0,
     "counter": 3
   },
   {
@@ -248,7 +257,8 @@
   {
     "hash": "add3d44da6c9a0d48fcf418db83cdb6b065b2c9214904a45e3fde36e58d48250",
     "name": "נועה חן",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "2bd9148878f63d3503bd5e57f2645ce25fe19ec13b42582ba75e1c51bd15b9cc",
@@ -268,22 +278,26 @@
   {
     "hash": "f06da86f30c6cfaa5d9b57356b696022c7e8e946591a3912fb9c1f7fae9ddd3b",
     "name": "נגה שריד",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "f06da86f30c6cfaa5d9b57356b696022c7e8e946591a3912fb9c1f7fae9ddd3b",
     "name": "נגה שריד",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "d5ba9037a3690a8001372fbe7be03b631fdd26c7faa534a7edb38aa8ea2cea8e",
     "name": "leeat fisher",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "9afff2c7c22fcdcb9aab00d15f5e4b03bcea9e1f35d69e8c0a16b5a1b61d3c74",
     "name": "Dror Peretz",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 4
   },
   {
     "hash": "e6de880a96881d82645e09fade4a141482701cdcb3f47f19b72aa91729963aa9",
@@ -308,7 +322,8 @@
   {
     "hash": "9d2572ab9ca9a7893956346ccc41edcdbf2bf20f8dc94d515e8fe3e2e632eaf8",
     "name": "נינה ברגשטיין",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 3
   },
   {
     "hash": "b3209c1f52fe0b56b6069f77c51a418e03d426975be761c831d133974c60396e",
@@ -318,12 +333,14 @@
   {
     "hash": "a55aba4c879102fab14e6634eb0be95a3a9def530797271767590f83a6115e99",
     "name": "Ayala Zilberman",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "c3c41b0cc73b319fa95b85af2ce400c83757b61bf305e6f5407597903d7bd75d",
     "name": "Maya Lustig",
-    "amount": 360.0
+    "amount": 360.0,
+    "counter": 9
   },
   {
     "hash": "333d71be0aa16431358be7b80f614ac69125d0963dbe2165c9fd42cd4b64cb13",
@@ -348,22 +365,26 @@
   {
     "hash": "94c76e49629cde07c34b5f38b9786ca9349df3d231d52ecbb02574379a9cbf5d",
     "name": "אביב שילה",
-    "amount": 60.0
+    "amount": 60.0,
+    "counter": 2
   },
   {
     "hash": "f7fd320f2a27ca9ffe4570b266a7727027d26331afe004026aed1639016adcc7",
     "name": "Lior Assayag",
-    "amount": 30.0
+    "amount": 30.0,
+    "counter": 1
   },
   {
     "hash": "0d974ba93e14671a75afee5435c5376aa1d9497e04bc4627a87986480def0f93",
     "name": "Lior Lapid",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "7bb26f6a6393322e4350947bbc57d53b32d11efd8bea4b1d20139e862dde46fa",
     "name": "Chen Keren",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "e005f1e6b99eb012091b473d34706cc3f5cb724f8f474de59aa37a018d053a64",
@@ -378,7 +399,8 @@
   {
     "hash": "7bb26f6a6393322e4350947bbc57d53b32d11efd8bea4b1d20139e862dde46fa",
     "name": "Chen Keren",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "7b64d11d6b8a2f5297c6ad3a48bc0faae87aacebef198e59a33c987dd55527f9",
@@ -388,17 +410,19 @@
   {
     "hash": "70ca652530866f9ae5514858ce3bddecb6111163c891a7bf79ec919de35d751f",
     "name": "Nurit Schneider",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "a65605b4e92b0f345fc8e0507862937208de8921c4005c8ccc0a9504c43257b3",
     "name": "Tali Sharon",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "b3e3fd2c5bd97bec97c19c1907fd5025125dd5946dcde7e280e9f4c184de469c",
     "name": "Noa Tal",
-    "amount": 40.0,
+    "amount": 120.0,
     "counter": 3
   },
   {
@@ -444,7 +468,8 @@
   {
     "hash": "d65007a8a4c032e004339e3a17831e14db163906bfa9c72c48a25ec7e906fc92",
     "name": "Yuval Ohana",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "32d86e9642e5b5c56ab8808d436803a96f8d244b27b5da4063592e0acbf91414",
@@ -454,7 +479,8 @@
   {
     "hash": "2a1ef9d01a7dea4f1ebb0ff92d6bea9bc3b653f384e5ba2d8d042edf417a6b9e",
     "name": "Shir Lebel",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "83b07bd7ab2ebdedde300c3b539f9194b0553792b934af64a484fda280db1f5a",
@@ -509,12 +535,14 @@
   {
     "hash": "057bb4db61ceb1c641f651ee009444b25b92171ddb69392aececf2c5a79d9943",
     "name": "Violetta Ordinov",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "057bb4db61ceb1c641f651ee009444b25b92171ddb69392aececf2c5a79d9943",
     "name": "Violetta Ordinov",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "761d8f531785e1c5362b0369fc56f3c62ea42a9af5ef9c319f6585b31650d7f8",
@@ -539,7 +567,8 @@
   {
     "hash": "dfa38bf4f17d6f34b91b96cdd0a4e5a93548ba6aaaaeb6edd9dd97512e15fd85",
     "name": "Kobi Stav",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "50d1f58d3386a42e659de4bf96a0069a185e64831d256b08606cc164fe72528e",
@@ -549,12 +578,14 @@
   {
     "hash": "cfe41f0302d4c86a173d6e38e0dd59ab5cdea89a1d5d18283b352596fad53699",
     "name": "מאיה קמינסקי",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "cfe41f0302d4c86a173d6e38e0dd59ab5cdea89a1d5d18283b352596fad53699",
     "name": "מאיה קמינסקי",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "d8a7a0d4daed897b2b11d6f5b2d085ba552b3e3208adb7a853d6617a55af22bf",
@@ -569,7 +600,8 @@
   {
     "hash": "a55aba4c879102fab14e6634eb0be95a3a9def530797271767590f83a6115e99",
     "name": "Ayala Zilberman",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "64aed512ec3ecb2aaafb40f0ec128066ea8a1fd0a7ecea12daf4160270c37fd0",
@@ -584,12 +616,14 @@
   {
     "hash": "41962290c8076c9a7adf7d73077fdc0d45b6c416620b3851b8b15e739f0b3ed4",
     "name": "Matan Bichacho",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 3
   },
   {
     "hash": "41962290c8076c9a7adf7d73077fdc0d45b6c416620b3851b8b15e739f0b3ed4",
     "name": "Matan Bichacho",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 3
   },
   {
     "hash": "4da56d3bb82c06aa60ef0d454178549c594bcd9395819ac242dc71f735e5218d",
@@ -604,17 +638,20 @@
   {
     "hash": "e1d5570d15c8537c6eaee8795b0d6339141fd98ef508f2a39bbfa281a5e1f070",
     "name": "hila senderovich",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "498855f4522db1113ba1c007ad37856794f874c175cd61c679eeeb4e006fde63",
     "name": "אוראל סולומון",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "498855f4522db1113ba1c007ad37856794f874c175cd61c679eeeb4e006fde63",
     "name": "אוראל סולומון",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "cd5498250ca1beea7318dcdd8d39891a34dcbee3b1b535af65f61351bdfa8c36",
@@ -649,12 +686,14 @@
   {
     "hash": "41962290c8076c9a7adf7d73077fdc0d45b6c416620b3851b8b15e739f0b3ed4",
     "name": "Matan Bichacho",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 3
   },
   {
     "hash": "510345098ca5610acf8727e4a66b9dd7d540b3e23c79ed862967d94e4372cb96",
     "name": "Shlomi Bisa",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "cf5c04ffe95b68a5f3889278e00075d078d54db543bb3e93b34fcb52893423e3",
@@ -664,7 +703,8 @@
   {
     "hash": "132bfb8339701ac1036b65140f0e270ed2f75ffd8cd4da1463116f9361c75636",
     "name": "Lior Ben-ari Waizinger",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "6c66794f7ac4a9f78c868ba062951254d481b2b7da91a2274608eb109b398884",
@@ -674,7 +714,8 @@
   {
     "hash": "132bfb8339701ac1036b65140f0e270ed2f75ffd8cd4da1463116f9361c75636",
     "name": "Lior Ben-ari Waizinger",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "336b3568fbae349a8d041daf514aae4081dd772049e3205d3c1ead995d6a8300",
@@ -684,12 +725,14 @@
   {
     "hash": "9afff2c7c22fcdcb9aab00d15f5e4b03bcea9e1f35d69e8c0a16b5a1b61d3c74",
     "name": "Dror Peretz",
-    "amount": 80.0
+    "amount": 80.0,
+    "counter": 4
   },
   {
     "hash": "510345098ca5610acf8727e4a66b9dd7d540b3e23c79ed862967d94e4372cb96",
     "name": "Shlomi Bisa",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "fd8c8359f81580af5506807f3e47332538daa6b901d0608ef9e7bda045c75cb4",
@@ -699,12 +742,14 @@
   {
     "hash": "7049cec082170e57887737213f450b0a4d1293d9aac725acbef7d47deaec42d3",
     "name": "Linor Ungar",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "7049cec082170e57887737213f450b0a4d1293d9aac725acbef7d47deaec42d3",
     "name": "Linor Ungar",
-    "amount": 40.0
+    "amount": 40.0,
+    "counter": 2
   },
   {
     "hash": "be2ff368f0e3e45702a3299840c848882344c9aeb14e42ad2f8daf8780a594fd",
@@ -729,16 +774,7 @@
   {
     "hash": "d3c15f66d6965c91131b9c3f928b055997f9171562ef33ff5eba213ed0250dbb",
     "name": "חן קשתי",
-    "amount": 80.0
-  },
-  {
-    "hash": "94f31fc46a719d7d891e648d3d1f0aa3bce1bbfc8732967dd90f65e2dee03bed",
-    "name": "nan",
-    "amount": 6670.0
-  },
-  {
-    "hash": "94f31fc46a719d7d891e648d3d1f0aa3bce1bbfc8732967dd90f65e2dee03bed",
-    "name": "nan",
-    "amount": 166.75
+    "amount": 80.0,
+    "counter": 2
   }
 ]
