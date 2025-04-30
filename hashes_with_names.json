@@ -317,7 +317,8 @@
   {
     "hash": "7ea799f20f59c477b1ab9ec6c6099bbae6ccea088860678c8a8e3edd3e2de15a",
     "name": "Eyal Shani",
-    "amount": 40.0
+    "amount": 80.0,
+    "counter": 2
   },
   {
     "hash": "9d2572ab9ca9a7893956346ccc41edcdbf2bf20f8dc94d515e8fe3e2e632eaf8",
