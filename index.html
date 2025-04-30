@@ -140,7 +140,7 @@
           document.getElementById("approve-btn").style.display = "none";
           document.getElementById("person-name").innerText = "";
         } else if (approvedHashes.includes(scannedHash)) {
-          document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name})</span>'`;
+          document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name} | Amount: ${entry.amount} )</span>'`;
           document.getElementById("approve-btn").style.display = "none";
           document.getElementById("cancel-btn").style.display = "none";
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
