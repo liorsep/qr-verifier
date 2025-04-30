@@ -142,8 +142,9 @@
         } else if (approvedHashes.includes(scannedHash)) {
           document.getElementById("result").innerHTML = `'<span class="rejected">Already Scanned!!! (Name: ${entry.name} | Amount: ${entry.amount} )</span>'`;
           document.getElementById("approve-btn").style.display = "none";
-          document.getElementById("cancel-btn").style.display = "none";
+          document.getElementById("cancel-btn").style.display = "inline-block";
           document.getElementById("person-name").innerText = `Name: ${entry.name} | Amount: ${entry.amount}₪`;
+          await html5QrCode.stop();
         } else {
           currentScannedHash = scannedHash;
           currentScannedName = entry.name;
