@@ -193,5 +193,23 @@
     "hash": "265dd63d4a31b14a8607a4473377cfe0e1550d7465b559e2d204be1291e7e3d5",
     "name": "Chen Kaminer",
     "amount": 120.0
+  },
+  {
+    "hash": "4d89d84dc67671601ca4908c2417e70e6cb22623a8f59ffd387a052713ed4a99",
+    "name": "Mezuman1",
+    "amount": 120.0,
+    "counter": 5
+  },
+  {
+    "hash": "649bbbe2d74c5d6a7b8fc2c724bb12dec095fc5a321572c84def452fa7e3fde1",
+    "name": "Mezuman2",
+    "amount": 120.0,
+    "counter": 5
+  },
+  {
+    "hash": "1e9144c6daee18ad0c3fc93e703acd3dcc4c7981cde3406aef00d1ffbcc76155",
+    "name": "No limit",
+    "amount": 120.0,
+    "counter": 10000
   }
 ]
