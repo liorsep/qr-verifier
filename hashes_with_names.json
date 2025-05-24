@@ -37,12 +37,8 @@
   {
     "hash": "370a2505884252363e9caa6dcd70be5145b1f6d98ebb46127de466980ea80518",
     "name": "אביב וידרו",
-    "amount": 120.0
-  },
-  {
-    "hash": "370a2505884252363e9caa6dcd70be5145b1f6d98ebb46127de466980ea80518",
-    "name": "אביב וידרו",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "6aa87c8f144b4a40eae0ef8497f3068ec5629bd1161ad45a8748872eadd08adc",
@@ -82,12 +78,8 @@
   {
     "hash": "3e0711a3679b99b17cd675fb00036591dd8e94217dbb0a137fa95eaeda02c8ce",
     "name": "ben maoz",
-    "amount": 120.0
-  },
-  {
-    "hash": "3e0711a3679b99b17cd675fb00036591dd8e94217dbb0a137fa95eaeda02c8ce",
-    "name": "ben maoz",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "b3f22511eed96423b0dfe21d3d63882cc4ed69035cf9695a06e450718fdd951e",
@@ -97,26 +89,18 @@
   {
     "hash": "f635f225b0a5c8f26c9954e86669f3bec1fff34d3a55a3e624fe0c1639586e78",
     "name": "Roy Shachori",
-    "amount": 120.0
-  },
-  {
-    "hash": "f635f225b0a5c8f26c9954e86669f3bec1fff34d3a55a3e624fe0c1639586e78",
-    "name": "Roy Shachori",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 3
   },
   {
     "hash": "3aaa7da0591029da7a74ce72eb8ba24dca15233538feb3c4b230edac15858b57",
     "name": "Tal Yitzhak",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "95cf10b99ace1c71c795ccf1c75ab6de77dc530d37ead6996502247c468d4e7d",
     "name": "Idan yallov",
-    "amount": 120.0
-  },
-  {
-    "hash": "3aaa7da0591029da7a74ce72eb8ba24dca15233538feb3c4b230edac15858b57",
-    "name": "Tal Yitzhak",
     "amount": 120.0
   },
   {
@@ -127,57 +111,31 @@
   {
     "hash": "5f4f5ecb986544d89a2e33100b07dbe6d4118d07e8bcbd8bffa18322803c0c27",
     "name": "ענבר מיכלס",
-    "amount": 120.0
-  },
-  {
-    "hash": "5f4f5ecb986544d89a2e33100b07dbe6d4118d07e8bcbd8bffa18322803c0c27",
-    "name": "ענבר מיכלס",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "bb81ec8b88bab90dd2b16a2b902ba8d1d55a81c736800af5f0abc393b0e832e7",
     "name": "Ronen Mass",
-    "amount": 120.0
-  },
-  {
-    "hash": "bb81ec8b88bab90dd2b16a2b902ba8d1d55a81c736800af5f0abc393b0e832e7",
-    "name": "Ronen Mass",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "31e8585e55c5d71c799a3a58d269dff56647d9f5f0b1245c9f193bd6dd45993b",
     "name": "Nitzan Peretz",
-    "amount": 120.0
-  },
-  {
-    "hash": "31e8585e55c5d71c799a3a58d269dff56647d9f5f0b1245c9f193bd6dd45993b",
-    "name": "Nitzan Peretz",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "73995b916c09929a41ba4ec85c7d4c9a411a667dbca1ee03c04473352e5f3de4",
     "name": "Elad Gutt",
-    "amount": 120.0
-  },
-  {
-    "hash": "73995b916c09929a41ba4ec85c7d4c9a411a667dbca1ee03c04473352e5f3de4",
-    "name": "Elad Gutt",
-    "amount": 120.0
-  },
-  {
-    "hash": "0a8d4d314ef3de71605ca0f8d26e96b66eee0bbc38bebabe0e3c48982dafcae7",
-    "name": "Elad Gutt",
-    "amount": -120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "e8b1306c1bdd0902950697e15dedaed4f1352173cfeb00851cc74f00d6033cf4",
     "name": "Idan Partiely",
     "amount": 120.0
-  },
-  {
-    "hash": "911acc52ee671d0db1fe652d20bd28a969ea62915f01574e04331b2e314e9df8",
-    "name": "Dror Peretz",
-    "amount": -2406.0
   },
   {
     "hash": "e51787f5d8c8bf7aa5eb2a83fb6c8f93e6f2b01057905e8a7c75cf274732e8d1",
@@ -210,11 +168,6 @@
     "amount": 120.0
   },
   {
-    "hash": "f635f225b0a5c8f26c9954e86669f3bec1fff34d3a55a3e624fe0c1639586e78",
-    "name": "Roy Shachori",
-    "amount": 120.0
-  },
-  {
     "hash": "f7fd320f2a27ca9ffe4570b266a7727027d26331afe004026aed1639016adcc7",
     "name": "Lior Assayag",
     "amount": 120.0
@@ -222,26 +175,18 @@
   {
     "hash": "8fdb8c09c8f194e01e43c01352e08912222e42bbfd01d1df8cc33ea80523eba1",
     "name": "חן טורקיה",
-    "amount": 120.0
-  },
-  {
-    "hash": "8fdb8c09c8f194e01e43c01352e08912222e42bbfd01d1df8cc33ea80523eba1",
-    "name": "חן טורקיה",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "63b6c1e8ff5ea374022b539924de13579960cccb70a7dc55be1f79161d320603",
     "name": "נבט גמליאל",
-    "amount": 120.0
+    "amount": 120.0,
+    "counter": 2
   },
   {
     "hash": "609b1dcef94df17ef454317540e67fed5febd6a57d664b1aae5b641eca2db6e2",
     "name": "טל ישראלי",
-    "amount": 120.0
-  },
-  {
-    "hash": "63b6c1e8ff5ea374022b539924de13579960cccb70a7dc55be1f79161d320603",
-    "name": "נבט גמליאל",
     "amount": 120.0
   },
   {
