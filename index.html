@@ -102,7 +102,7 @@
           .then(res => res.json())
           .then(data => { validHashes = data; });
 
-        fetch("https://sheetdb.io/api/v1/f8okk9qzymamk")
+        fetch("https://sheetdb.io/api/v1/99szxnug6q0cz")
           .then(res => res.json())
           .then(data => {
             approvalCounts = {};
@@ -193,7 +193,7 @@
         const data = {
           data: [{ Name: name, Phone: number, Amount: amount, Hash: hash, "Approved_At": new Date().toISOString() }]
         };
-        fetch("https://sheetdb.io/api/v1/f8okk9qzymamk", {
+        fetch("https://sheetdb.io/api/v1/99szxnug6q0cz", {
           method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
         });
       }
